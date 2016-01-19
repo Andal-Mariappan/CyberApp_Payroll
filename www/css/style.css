@@ -63,3 +63,18 @@
     display: none;
 
 }
+
+input[type="radio"]
+{
+    width:2em;
+    height: 2em;
+}
+.radio-label{
+    margin-top: 3px;
+    margin-left: 15px;
+    position: fixed;
+}
+/*.radio-label : checked{
+    background-color:#bbb;
+    
+}*/

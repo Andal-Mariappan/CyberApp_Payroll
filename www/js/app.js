@@ -35,6 +35,11 @@ var myApp = angular.module('starter', ['ionic', ])
             url: '/views/employeeDetail',
             templateUrl: 'views/employeeDetail.html'
         })
+        .state('leave', {
+            url: '/views/leave',
+            templateUrl: 'views/leave.html',
+            controller : 'leaveController'
+        })
 
 
     $urlRouterProvider.otherwise('/views/logIn');
