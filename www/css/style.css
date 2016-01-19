@@ -1,0 +1,65 @@
+/* Empty. Add your own CSS if you like */
+
+.tabs-assertive {
+    background-color: #FF9900;
+}
+
+.ion-person {
+    color: white;
+}
+
+.ion-calendar {
+    color: white;
+}
+
+.ion-document {
+    color: white;
+}
+
+.bar {
+    /* border-color: #b2b2b2; */
+    /* background-color: #f8f8f8; */
+    /* background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%); */
+    color: #444;
+}
+
+.login {
+    width: 30%;
+    color: white;
+    background-color: #FF9900;
+}
+
+.login-focus {
+    border: 1px solid #FF9900;
+}
+.fontz-color{
+	color: #FF9900;
+}
+
+.bar.bar-balanced {
+    background-color: white;
+    color: #FF9900;
+    margin-left: 80%;
+    background-color: #EEEEEE;
+}
+
+.pane,.view {
+    background-color: #EEEEEE;
+}
+.list{
+	background-color: #EEEEEE;
+}
+.positive{
+	background-color: #FF9900;
+	color: white;
+}
+.icons{
+	font-size: 70px;
+}
+.iconsExit{
+	font-size: 40px;
+}
+.bar .title {
+    display: none;
+
+}
