@@ -29,7 +29,7 @@ var myApp = angular.module('starter', ['ionic', ])
         .state('home', {
             url: '/views/home',
             templateUrl: 'views/home.html',
-            controller : 'homeController'
+            controller: 'homeController'
         })
         .state('employeeDetail', {
             url: '/views/employeeDetail',
@@ -38,11 +38,14 @@ var myApp = angular.module('starter', ['ionic', ])
         .state('leave', {
             url: '/views/leave',
             templateUrl: 'views/leave.html',
-            controller : 'leaveController'
+            controller: 'leaveController'
+        })
+        .state('register', {
+            url: '/views/register',
+            templateUrl: 'views/register.html'
         })
 
 
     $urlRouterProvider.otherwise('/views/logIn');
 
 });
-
