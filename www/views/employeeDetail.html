@@ -1,19 +1,127 @@
-
-    <ion-content>
-    </ion-content>
-    <ion-tabs class="tabs-assertive tabs-icon-only">
-        <ion-tab title="Home" icon-on="icon ion-person" icon-off="icon ion-person">
-            <br>
-            <br>
-            <br>
-            <div id="employeeDetail">
-                <img src="img/ionic.png" style="with:200px;height:200px">
+<ion-content>
+</ion-content>
+<ion-tabs class="tabs-assertive tabs-icon-only">
+    <ion-tab title="Home" icon-on="icon ion-person" icon-off="icon ion-person">
+        <div class="row">
+            <div class="col">
+                <i class="ion-ios-home" style="color: #FF9900; font-size: 40px;"></i>
             </div>
-        </ion-tab>
-        <ion-tab title="About" icon-on="icon ion-calendar" icon-off="icon ion-calendar">
-            <!-- Tab 2 content -->
-        </ion-tab>
-        <ion-tab title="Settings" icon-on="icon ion-document" icon-off="icon ion-document">
-            <!-- Tab 3 content -->
-        </ion-tab>
-    </ion-tabs>
+            <div class="col text-center">
+                <h4 style="color: #FF9900;">ProFile</h4>
+            </div>
+            <div class="col text-right">
+                <i class="ion-android-share-alt" style="color: #FF9900; font-size: 40px;"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-30">
+                <div id="employeeDetail">
+                    <img src="img/ionic.png" style="with:100px;height:100px">
+                </div>
+            </div>
+            <div class="col col-70 text-center">
+                <h2 style="color: #FF9900;">Nuttakrittra Phumsawai</h2>
+                <h4>Programmer</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <h4>Cyber Advance System And Network Co.,Ltd
+ไซเบอร์ แอดวานซ์ ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด
+169/50 อาคาร เอ็มที ออฟฟิต ปาร์ค ม.3 ถ.ลำลูกกา
+ต.ลำลูกกา อ.ลำลูกกา จ.ปทุมธานี 12130</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="col col-25 text-right">
+                <i class="ion-ios-telephone" style="color: #FF9900; font-size: 40px;"></i>
+            </div>
+            <div class="col col-75 ">
+                <h4><b>094-550-6035</b></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-25 text-right">
+                <i class="ion-social-facebook" style="color: #0c60ee; font-size: 40px;"></i>
+            </div>
+            <div class="col col-75 ">
+                <h4><b>/tingtang.th</b></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-25 text-right">
+                <i class="ion-social-whatsapp" style="color: #28a54c; font-size: 40px;"></i>
+            </div>
+            <div class="col col-75 ">
+                <h4><b>tingtang35</b></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-25 text-right">
+                <i class="ion-email" style="color: #e42112; font-size: 40px;"></i>
+            </div>
+            <div class="col col-75 ">
+                <h4><b>tingtang35@gmail.com</b></h4>
+            </div>
+        </div>
+    </ion-tab>
+    <ion-tab title="About" icon-on="icon ion-calendar" icon-off="icon ion-calendar">
+        <!-- Tab 2 content -->
+        <div class="row">
+            <div class="col">
+                <i class="ion-ios-home" style="color: #FF9900; font-size: 40px;"></i>
+            </div>
+            <div class="col text-center">
+                <h4 style="color: #FF9900;">History</h4>
+            </div>
+            <div class="col text-right">
+            </div>
+        </div>
+        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+        </canvas>
+    </ion-tab>
+    <ion-tab title="Settings" icon-on="icon ion-document" icon-off="icon ion-document">
+        <!-- Tab 3 content -->
+        <div class="row">
+            <div class="col">
+                <i class="ion-ios-home" style="color: #FF9900; font-size: 40px;"></i>
+            </div>
+            <div class="col text-center">
+                <h4 style="color: #FF9900;">Request</h4>
+            </div>
+            <div class="col text-right">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-10">
+                
+            </div>
+            <div class="col col-80 text-center">
+                <div class="button-bar">
+                    <a class="button" ng-class="var==1?'button-balanced':'button-stable'" ng-click="click(1)">Leave</a>
+                    <a class="button" ng-class="var==2?'button-balanced':'button-stable'" ng-click="click(2)">Adjust</a>
+                </div>
+            </div>
+            <div class="col col-10">
+            </div>
+        </div>
+
+
+                <div class="row">
+            <div class="col col-10">
+                
+            </div>
+            <div class="col col-70">
+                
+            </div>
+            <div class="col col-10">
+            </div>
+        </div>
+
+    </ion-tab>
+</ion-tabs>

@@ -33,7 +33,8 @@ var myApp = angular.module('starter', ['ionic', ])
         })
         .state('employeeDetail', {
             url: '/views/employeeDetail',
-            templateUrl: 'views/employeeDetail.html'
+            templateUrl: 'views/employeeDetail.html',
+            controller : 'employeeController'
         })
 
 
