@@ -53,11 +53,21 @@
 	background-color: #FF9900;
 	color: white;
 }
-.icons{
+.iconsMore{
 	font-size: 70px;
+    color: #FF99CC;
+}
+.iconsLeave{
+    font-size: 70px;
+    color: #00CCFF;
+}
+.iconsAdj{
+    font-size: 70px;
+    color: #FFFF00;
 }
 .iconsExit{
 	font-size: 40px;
+    color: #EE0000;
 }
 .bar .title {
     display: none;
@@ -75,4 +85,23 @@
 .card .item:last-child, .list-inset .item:last-child {
     margin-bottom: -1px;
     background-color: #DDDDDD;
+}
+
+input[type="radio"]
+{
+    width:2em;
+    height: 2em;
+}
+.radio-label{
+    margin-top: 3px;
+    margin-left: 15px;
+    position: fixed;
+}
+/*.radio-label : checked{
+    background-color:#bbb;
+    
+}*/
+img {
+    -webkit-user-drag: none;
+    border-radius: 50%;
 }
