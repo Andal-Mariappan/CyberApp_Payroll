@@ -53,13 +53,27 @@
 	background-color: #FF9900;
 	color: white;
 }
-.icons{
+.iconsMore{
 	font-size: 70px;
+    color: #FF99CC;
+}
+.iconsLeave{
+    font-size: 70px;
+    color: #00CCFF;
+}
+.iconsAdj{
+    font-size: 70px;
+    color: #FFFF00;
 }
 .iconsExit{
 	font-size: 40px;
+    color: #EE0000;
 }
 .bar .title {
     display: none;
 
+}
+img {
+    -webkit-user-drag: none;
+    border-radius: 50%;
 }

@@ -29,15 +29,18 @@ var myApp = angular.module('starter', ['ionic', ])
         .state('home', {
             url: '/views/home',
             templateUrl: 'views/home.html',
-            controller : 'homeController'
+            controller: 'homeController'
         })
         .state('employeeDetail', {
             url: '/views/employeeDetail',
             templateUrl: 'views/employeeDetail.html'
+        })
+        .state('register', {
+            url: '/views/register',
+            templateUrl: 'views/register.html'
         })
 
 
     $urlRouterProvider.otherwise('/views/logIn');
 
 });
-
