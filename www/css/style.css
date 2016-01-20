@@ -119,6 +119,7 @@ img {
 .Chart {
     width: 150px;
     height: 150px;
+}
 
 .item .badgeleave {
     display: -webkit-box;
@@ -166,11 +167,9 @@ img {
     font-color: red;
 }
 
-
-#fontStatus{
+#fontStatus {
     color: white;
     font-size: 12px;
     margin: auto;
     font-weight: bold;
-
 }
