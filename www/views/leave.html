@@ -1,27 +1,28 @@
 <ion-content>
-    <div class="row row-bottom ">
-        <div class="col text-left"><a href="#"><i class="ion-ios-home" style="font-size: 40px; color: #ff9900;" ></i></a></div>
-        <div class="col text-center">
+    <div class="row row-bottom " style="text-align:left;">
+        <div class="col col-33"><a href="#/views/home"><i class="ion-ios-home" style="font-size: 40px; color: #ff9900; " ></i></a></div>
+        <div class="col col-33" style="text-align:center;">
             <p style="font-size: 150%; color: #ff9900;">Leave</p>
         </div>
-        <div class="col text-right"><a href="#"><i class="ion-navicon-round" style="font-size: 40px; color: #ff9900;"></i></a></div>
+        <div class="col col-33" style="text-align:right;"><a href="#/views/leaveList"><i class="ion-navicon-round" style="font-size: 40px; color: #ff9900;"></i></a></div>
     </div>
     </br>
     <div class="row">
-        <div class="col col-33" >
-            <input type="radio" checked="checked"  style="font-size: 100%;border-style: none; text-align:center; ">
+        <div class="col col-33">
+            <input type="radio" id="radio01" checked="checked"  style="font-size: 100%;border-style: none; text-align:center; ">
 
             <label class="radio-label">Sick Leave</label>
         </div>
         <div class="col col-33">
-            <input type="radio"  style="font-size: 100%;border-style: none; text-align:center; ">
+            <input type="radio" id="radio02" style="font-size: 100%;border-style: none; text-align:center; ">
             <label class="radio-label">Personal Leave</label>
         </div>
         <div class="col col-33">
-            <input type="radio"  style="font-size: 100%;border-style: none; text-align:center; ">
+            <input type="radio" id="radio03" style="font-size: 100%;border-style: none; text-align:center; ">
             <label class="radio-label">Annual Leave</label>
         </div>
     </div>
+    
     <hr>
     <div class="row row-bottom ">
         <div class="col text-left">
@@ -33,7 +34,7 @@
         <div class="col">
             <div class="item item-input-inset" style="background-color: #EEEEEE; border-style: none;">
                 <label class="item-input-wrapper">
-                    <input type="text" placeholder="DD/MM/YYYY" style="background-color: #fff; ">&nbsp;&nbsp;<i class="ion-calendar" style="font-size: 30px; color: #ff9900;"></i>
+                    <input type="text" placeholder="DD/MM/YYYY" style="background-color: #fff; ">&nbsp;&nbsp;<i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
                 </label>
             </div>
         </div>
@@ -41,7 +42,7 @@
             <div class="item item-input-inset" style="background-color: #EEEEEE; border-style: none;">
                 <label class="item-input-wrapper">
                     <input type="text" placeholder="DD/MM/YYYY" style="background-color: #fff; "> &nbsp;&nbsp;
-                    <i class="ion-calendar" style="font-size: 30px; color: #ff9900;"></i>
+                    <i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
                 </label>
             </div>
         </div>
