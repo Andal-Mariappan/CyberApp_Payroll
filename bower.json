@@ -5,6 +5,11 @@
     "ionic": "driftyco/ionic-bower#1.2.4"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "Chart.js": "~1.0.2",
+    "tc-angular-chartjs": "~1.0.13"
+=======
     "angular-chart.js": "~0.8.8"
+>>>>>>> 50e1f72773d63d6028a92e59ad48cfefafe884b3
   }
 }
