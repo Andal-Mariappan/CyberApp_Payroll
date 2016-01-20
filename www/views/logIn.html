@@ -9,21 +9,29 @@
         <br>
         <div class="list list-inset">
             <label class="item item-input  login-focus">
-                <input type="text" placeholder="E-mail">
+                <input type="email" placeholder="E-mail" ng-model="loginData.userName">
             </label>
             <label class="item item-input  login-focus">
-                <input type="text" placeholder="Password">
+                <input type="password" placeholder="Password" ng-model="loginData.password">
             </label>
         </div>
         <br>
-        <button class="button login" ng-click="logIn()">LogIn</button>
+        <button class="button login" ng-click="login()">LogIn</button>
+    </div>
+    <br>
+    <div class="text-center" ng-hide="message == ''">
+        {{message}}
     </div>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <div class="text-right">
-        <a href="#/views/register"><p class="fontz-color">Register</p></a>
+    <div class="row row-bottom">
+        <div class="col col-25"></div>
+        <div class="col col-25"></div>
+        <div class="col col-35"></div>
+        <div class="col col-15">
+            <a href="#/views/register">
+                <p class="fontz-color">Register</p>
+            </a>
+        </div>
     </div>
 </ion-content>

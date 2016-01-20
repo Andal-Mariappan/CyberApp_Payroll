@@ -7,7 +7,7 @@
                 <i class="ion-ios-home" style="color: #FF9900; font-size: 40px;"></i>
             </div>
             <div class="col text-center">
-                <h4 style="color: #FF9900;">ProFile</h4>
+                <h4 style="color: #FF9900;">Profile</h4>
             </div>
             <div class="col text-right">
                 <i class="ion-android-share-alt" style="color: #FF9900; font-size: 40px;"></i>
@@ -81,8 +81,15 @@
             <div class="col text-right">
             </div>
         </div>
-        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
-        </canvas>
+        <div class="row">
+            <div class="col col-50">
+                <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data" chart-legend="doughnutChart1"></canvas>
+            </div>
+            <div class="col col-10 text-center ">
+            </div>
+            <div class="col col-40 text-right">
+            </div>
+        </div>
     </ion-tab>
     <ion-tab title="Settings" icon-on="icon ion-document" icon-off="icon ion-document">
         <!-- Tab 3 content -->

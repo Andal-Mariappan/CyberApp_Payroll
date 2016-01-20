@@ -13,19 +13,23 @@
         <div class="col col-80" style="font-size: 150%; color:#FF9900">Register
             <div class="list list-inset">
                 <label class="item item-input  login-focus">
-                    <input type="text" placeholder="E-mail">
+                    <input type="email" placeholder="E-mail" ng-model="registration.email" required>
+                </label>
+                <label class="item item-input  login-focus" >
+                    <input type="password" placeholder="Password" ng-model="registration.password" required>
                 </label>
                 <label class="item item-input  login-focus">
-                    <input type="text" placeholder="Password">
-                </label>
-                <label class="item item-input  login-focus">
-                    <input type="text" placeholder="Confirm Password">
+                    <input type="password" placeholder="Confirm Password" ng-model="registration.confirmPassword" required>
                 </label>
             </div>
         </div>
         <div class="col col-10"></div>
     </div>
     <div class="text-center">
-        <button class="button login">Submit</button>
+        <button class="button login" ng-click="signUp()">Submit</button>
+    </div>
+    <br>
+    <div data-ng-hide="message == ''" class="text-center">
+        {{message}}
     </div>
 </ion-content>
