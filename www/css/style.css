@@ -82,11 +82,9 @@
     color: #FF9900;
 }
 
-.card .item:last-child, .list-inset .item:last-child {
-    margin-bottom: -1px;
+.ebuCard{
     background-color: #DDDDDD;
 }
-
 input[type="radio"]
 {
     width:2em;
