@@ -34,7 +34,8 @@ var myApp = angular.module('starter', ['ionic', ])
         })
         .state('employeeDetail', {
             url: '/views/employeeDetail',
-            templateUrl: 'views/employeeDetail.html'
+            templateUrl: 'views/employeeDetail.html',
+            controller : 'employeeController'
         })
         .state('leave', {
             url: '/views/leave',
@@ -50,11 +51,7 @@ var myApp = angular.module('starter', ['ionic', ])
             url: '/views/register',
             templateUrl: 'views/register.html'
         })
-        .state('doughnut', {
-            url: '/views/doughnut',
-            templateUrl: 'views/doughnut.html',
-            controller: 'doughnutController'
-        })
+        
 
 
 
