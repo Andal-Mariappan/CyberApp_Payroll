@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var myApp = angular.module('starter', ['ionic', 'LocalStorageModule','tc.chartjs'])
 
+
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
 
@@ -41,11 +42,18 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/leave.html',
             controller: 'leaveController'
         })
+        .state('leaveList', {
+            url: '/views/leaveList',
+            templateUrl: 'views/leaveList.html',
+            controller: 'leaveListController'
+        })
         .state('register', {
             url: '/views/register',
             templateUrl: 'views/register.html',
             controller: 'registerController'
         })
+        
+
 
 
     $urlRouterProvider.otherwise('/views/logIn');

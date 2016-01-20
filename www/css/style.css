@@ -119,4 +119,58 @@ img {
 .Chart {
     width: 150px;
     height: 150px;
+
+.item .badgeleave {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.badgeleave {
+    background-color: transparent;
+    color: #AAAAAA;
+    z-index: 1;
+    display: inline-block;
+    padding: 3px 6px;
+    min-width: 25px;
+    border-radius: 10px;
+    vertical-align: baseline;
+    white-space: nowrap;
+    line-height: 16px;
+}
+
+.badgeleave.badge-adjust {
+    background-color: #00CC00;
+    color: #fff;
+}
+
+.badgeleave.badge-wait {
+    background-color: #33CCFF;
+    color: #fff;
+}
+
+.badgeleave.badge-reject {
+    background-color: #ef473a;
+    color: #fff;
+}
+
+.badgeleave.badge-font {
+    text-align: center;
+    font-weight: bold;
+    font-color: red;
+}
+
+
+#fontStatus{
+    color: white;
+    font-size: 12px;
+    margin: auto;
+    font-weight: bold;
+
 }
