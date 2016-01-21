@@ -57,6 +57,10 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/register.html',
             controller: 'registerController'
         })
+        .state('capture', {
+            url: '/views/capture',
+            templateUrl: 'views/capture.html',
+        })
         
 
 
