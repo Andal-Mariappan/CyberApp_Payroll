@@ -57,15 +57,16 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/register.html',
             controller: 'registerController'
         })
+
         .state('intro', {
-            url: '/views/intro',
-            templateUrl: 'views/intro.html',
-            controller: 'introController'
+        url: '/views/intro',
+        templateUrl: 'views/intro.html',
+        controller: 'introController'
         })
-        .state('menu', {
-        url: '/views/menu',
-        templateUrl: 'views/menu.html',
-        controller: 'homeController'
+
+        .state('capture', {
+        url: '/views/capture',
+        templateUrl: 'views/capture.html',
         })
 
 
