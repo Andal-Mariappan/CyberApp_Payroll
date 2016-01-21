@@ -6,76 +6,34 @@
             <div class="col">
                 <a href="#/views/home"><i class="ion-ios-home" style="color: #FF9900; font-size: 40px;"></i></a>
             </div>
-            <div class="col text-center">
-                <h4 style="color: #FF9900;">Profile</h4>
-            </div>
-            <div class="col text-right">
-                <a href="#/views/capture"><i class="ion-android-share-alt" style="color: #FF9900; font-size: 40px;"></i></a>
-            </div>
         </div>
-        <div class="row">
-            <div class="col col-20">
-                <div id="employeeDetail">
-                    <img src="img/simson.png" style="with:100px;height:100px">
+        <br>
+        <div class="text-center">
+            <a href="#/views/employeeDetail">
+                <div>
+                    <img src="img/simson.png" style="with:200px;height:200px">
+                </div>
+            </a>
+            <p style="font-size: 150%;">{{employeeData.FirstName}} Tingtang {{employeeData.LastName}}</p>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col col-30 ">
+                    <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 40px;"></i>
+                </div>
+                <div class="col col-70 text-left">
+                    <h4 style="color: green; ">09.00 PM</h4>
                 </div>
             </div>
-            <div class="col col-80 text-center">
-                <h2 style="color: #FF9900;">{{employeeData.FirstName}} {{employeeData.LastName}}</h2>
-                <h4>Programmer</h4>
-            </div>
-        </div> 
-        <div class="row" >
-            <div class="col" >
-            <div class="card" >
-                <div class="item item-text-wrap ebuCard" style="text-align: justify;">
-                    <p>Cyber Advance System And Network Co.,Ltd</p>
-                    <p>ไซเบอร์ แอดวานซ์ ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด</p>
-                    <p>169/50 อาคาร เอ็มที ออฟฟิต ปาร์ค ม.3 ถ.ลำลูกกา ต.ลำลูกกา อ.ลำลูกกา จ.ปทุมธานี 12130</p>
-                    <!-- <p>Cyber Advance System And Network Co.,Ltd</p>
-                    <p>ไซเบอร์ แอดวานซ์ ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด</p>
-                    <p>169/50 อาคาร เอ็มที ออฟฟิต ปาร์ค ม.3 ถ.ลำลูกกา</p>
-                    <p>ต.ลำลูกกา อ.ลำลูกกา จ.ปทุมธานี 12130</p> -->
-<!--                                         <p>Cyber Advance System And Network Co.,Ltd
-                    ไซเบอร์ แอดวานซ์ ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด
-                    169/50 อาคาร เอ็มที ออฟฟิต ปาร์ค ม.3 ถ.ลำลูกกา
-                    ต.ลำลูกกา อ.ลำลูกกา จ.ปทุมธานี 12130</p> -->
+            <div class="row">
+                <div class="col col-30">
+                    <i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 40px;"></i>
+                </div>
+                <div class="col col-70 text-left">
+                    <h4 style="color: red; ">09.00 PM</h4>
                 </div>
             </div>
-            </div>
-        </div>
-        <div class="row">
-        </div>
-        <div class="row">
-            <div class="col col-20 text-right">
-                <i class="ion-ios-telephone" style="color: #FF9900; font-size: 40px;"></i>
-            </div>
-            <div class="col col-80 ">
-                <h4><b>{{employeeData.Tel}}</b></h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-20 text-right">
-                <i class="ion-social-facebook" style="color: #0c60ee; font-size: 40px;"></i>
-            </div>
-            <div class="col col-80 ">
-                <h4><b>{{employeeData.Facebook}}</b></h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-20 text-right">
-                <i class="ion-social-whatsapp" style="color: #28a54c; font-size: 40px;"></i>
-            </div>
-            <div class="col col-80 ">
-                <h4><b>{{employeeData.Line}}</b></h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-20 text-right">
-                <i class="ion-email" style="color: #e42112; font-size: 40px;"></i>
-            </div>
-            <div class="col col-80 ">
-                <h4><b>{{employeeData.Email}}</b></h4>
-            </div>
+            <!-- <p style="font-size: 150%;">Check In : 09:00 PM</p> -->
         </div>
     </ion-tab>
     <ion-tab title="About" icon-on="icon ion-calendar" icon-off="icon ion-calendar">
@@ -91,59 +49,64 @@
             </div>
         </div>
         <div class="row">
-            <div class="col text-left">
-            </div>
-            <div class="col text-center">
-                <h4 style="color: #000; font-weight:bold;">Work-Sheet</h4>
-            </div>
-            <div class="col text-right">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-50">
+            <div class="col col-40">
                 <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data" chart-legend="doughnutChart1"></canvas>
             </div>
             <div class="col col-10 text-center ">
+                <i class="ion-android-checkbox-blank" style="color: #BBBBBB; font-size: 25px;"></i>
+                 <i class="ion-android-checkbox-blank" style="color: #00DD00; font-size: 25px;"></i>
+                  <i class="ion-android-checkbox-blank" style="color: #FF9900; font-size: 25px;"></i>
             </div>
-            <div class="col col-40 text-right">
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col text-left">
-            </div>
-            <div class="col text-center">
-                <h4 style="color: #000; font-weight:bold;">Leave</h4>
-            </div>
-            <div class="col text-right">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-50">
-                <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data2" chart-legend="doughnutChart1"></canvas>
-            </div>
-            <div class="col col-10 text-center ">
-            </div>
-            <div class="col col-40 text-right">
+            <div class="col col-50 text-left">
+                <p>จำนวนวันทั้งหมด</p>
+                <p>จำนวนวันที่ทำงาน</p>
+                <p>จำนวนวันที่ลา</p>
             </div>
         </div>
         <hr>
-        <div class="row">
-            <div class="col text-left">
+
+                <div class="row">
+            <div class="col col-10">
             </div>
-            <div class="col text-center">
-                <h4 style="color: #000; font-weight:bold;">Absent</h4>
+            <div class="col col-80 text-center">
+                <div class="button-bar">
+                    <a class="button" ng-class="var==1?'button-balanced':'button-stable'" ng-click="click(1)">Worked</a>
+                    <a class="button" ng-class="var==2?'button-balanced':'button-stable'" ng-click="click(2)">Leaved</a>
+                </div>
             </div>
-            <div class="col text-right">
+            <div class="col col-10">
             </div>
         </div>
-        <div class="row">
-            <div class="col col-50">
-                <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data3" chart-legend="doughnutChart1"></canvas>
+        <div ng-show="var=='1'">
+            <div class="list">
+                <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
+                    <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                    <h2 style="font-weight: bold;">Sick Leave | 15 Dec 2015</h2>
+                    <p>ไปพบแพทย์เพื่อ Follw Up</p>
+                    <span class="badgeleave badge-adjust"><p id="fontStatus">A</p></span>
+                </a>
+                <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
+                    <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                    <h2 style="font-weight: bold;">Personal Leave | 24 Dec 2015</h2>
+                    <p>ไปทำใบขับขี่</p>
+                    <span class="badgeleave badge-wait "><p id="fontStatus">W</p></span>
+                </a>
             </div>
-            <div class="col col-10 text-center ">
-            </div>
-            <div class="col col-40 text-right">
+        </div>
+        <div ng-show="var=='2'">
+            <div class="list">
+                <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
+                    <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                    <h2 style="font-weight: bold;">07 Dec 2015</h2>
+                    <p>ลืมโทรศัพท์ไว้ที่บ้าน</p>
+                    <span class="badgeleave badge-reject"><p id="fontStatus">R</p></span>
+                </a>
+                <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
+                    <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                    <h2 style="font-weight: bold;">24 Dec 2015</h2>
+                    <p>on site @True</p>
+                    <span class="badgeleave badge-adjust"><p id="fontStatus">A</p></span>
+                </a>
             </div>
         </div>
         
@@ -172,7 +135,6 @@
             <div class="col col-10">
             </div>
         </div>
-
         <div ng-show="var=='1'">
             <div class="list">
                 <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">

@@ -23,38 +23,22 @@ myApp.controller('employeeController', ['$scope', 'employeeService', function($s
 
     // Chart.js
     $scope.data = [{
-        value: 5,
+        value: 14,
         color: '#00DD00',
         highlight: '#00FF00',
         label: 'Work'
     }, {
-        value: 25,
+        value: 3,
+        color: '#FF9900',
+        highlight: '#FF9900',
+        label: 'Leave'
+    },
+    {
+        value: 13,
         color: '#BBBBBB',
         highlight: '#DDDDDD',
         label: 'Day'
-    }, ];
-    $scope.data2 = [{
-        value: 15,
-        color: '#00DD00',
-        highlight: '#00FF00',
-        label: 'Work'
-    }, {
-        value: 135,
-        color: '#BBBBBB',
-        highlight: '#DDDDDD',
-        label: 'Day'
-    }, ];
-    $scope.data3 = [{
-        value: 95,
-        color: '#00DD00',
-        highlight: '#00FF00',
-        label: 'Work'
-    }, {
-        value: 85,
-        color: '#BBBBBB',
-        highlight: '#DDDDDD',
-        label: 'Day'
-    }, ];
+    } ];
 
     // Chart.js Options
     $scope.options = {
