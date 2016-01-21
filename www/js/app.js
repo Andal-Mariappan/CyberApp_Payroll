@@ -47,10 +47,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/leaveList.html',
             controller: 'leaveListController'
         })
+        .state('leaveDraft', {
+            url: '/views/leaveDraft',
+            templateUrl: 'views/leaveDraft.html',
+            
+        })
         .state('register', {
             url: '/views/register',
             templateUrl: 'views/register.html',
             controller: 'registerController'
+        })
+        .state('capture', {
+            url: '/views/capture',
+            templateUrl: 'views/capture.html',
         })
         
 

@@ -4,7 +4,7 @@
     background-color: #FF9900;
 }
 
-.ion-person {
+.ion-arrow-swap {
     color: white;
 }
 
@@ -167,11 +167,9 @@ img {
     font-color: red;
 }
 
-
-#fontStatus{
+#fontStatus {
     color: white;
     font-size: 12px;
     margin: auto;
     font-weight: bold;
-
 }
