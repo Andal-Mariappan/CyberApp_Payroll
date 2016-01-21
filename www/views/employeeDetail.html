@@ -1,7 +1,7 @@
 <ion-content>
 </ion-content>
 <ion-tabs class="tabs-assertive tabs-icon-only">
-    <ion-tab title="Home" icon-on="icon ion-person" icon-off="icon ion-person">
+    <ion-tab title="Home" icon-on="icon ion-arrow-swap" icon-off="icon ion-arrow-swap">
         <div class="row">
             <div class="col">
                 <a href="#/views/home"><i class="ion-ios-home" style="color: #FF9900; font-size: 40px;"></i></a>
@@ -91,6 +91,15 @@
             </div>
         </div>
         <div class="row">
+            <div class="col text-left">
+            </div>
+            <div class="col text-center">
+                <h4 style="color: #000; font-weight:bold;">Work-Sheet</h4>
+            </div>
+            <div class="col text-right">
+            </div>
+        </div>
+        <div class="row">
             <div class="col col-50">
                 <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data" chart-legend="doughnutChart1"></canvas>
             </div>
@@ -99,6 +108,45 @@
             <div class="col col-40 text-right">
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="col text-left">
+            </div>
+            <div class="col text-center">
+                <h4 style="color: #000; font-weight:bold;">Leave</h4>
+            </div>
+            <div class="col text-right">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-50">
+                <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data2" chart-legend="doughnutChart1"></canvas>
+            </div>
+            <div class="col col-10 text-center ">
+            </div>
+            <div class="col col-40 text-right">
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col text-left">
+            </div>
+            <div class="col text-center">
+                <h4 style="color: #000; font-weight:bold;">Absent</h4>
+            </div>
+            <div class="col text-right">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-50">
+                <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data3" chart-legend="doughnutChart1"></canvas>
+            </div>
+            <div class="col col-10 text-center ">
+            </div>
+            <div class="col col-40 text-right">
+            </div>
+        </div>
+        
     </ion-tab>
     <ion-tab title="Settings" icon-on="icon ion-document" icon-off="icon ion-document">
         <!-- Tab 3 content -->

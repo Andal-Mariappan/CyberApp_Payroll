@@ -33,6 +33,28 @@ myApp.controller('employeeController', ['$scope', 'employeeService', function($s
         highlight: '#DDDDDD',
         label: 'Day'
     }, ];
+    $scope.data2 = [{
+        value: 15,
+        color: '#00DD00',
+        highlight: '#00FF00',
+        label: 'Work'
+    }, {
+        value: 135,
+        color: '#BBBBBB',
+        highlight: '#DDDDDD',
+        label: 'Day'
+    }, ];
+    $scope.data3 = [{
+        value: 95,
+        color: '#00DD00',
+        highlight: '#00FF00',
+        label: 'Work'
+    }, {
+        value: 85,
+        color: '#BBBBBB',
+        highlight: '#DDDDDD',
+        label: 'Day'
+    }, ];
 
     // Chart.js Options
     $scope.options = {
@@ -66,6 +88,6 @@ myApp.controller('employeeController', ['$scope', 'employeeService', function($s
 
         //String - A legend template
         legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
-
     };
+    
 }]);
