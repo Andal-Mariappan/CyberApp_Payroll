@@ -115,6 +115,10 @@ img {
     -webkit-user-drag: none;
     border-radius: 50%;
 }
+.imgPicFinger {
+    -webkit-user-drag: none;
+    border-radius: 0%;
+}
 
 .Chart {
     width: 150px;
@@ -173,3 +177,22 @@ img {
     margin: auto;
     font-weight: bold;
 }
+
+.iconsMenu {
+    font-size: 40px;
+    color: #FF9900;
+}
+
+.intro {
+    margin-top: 220px;
+   
+}
+.menuList{
+     margin-top: 3px;
+     color: #444444;
+     background-color: #FFCC66;
+}
+.menuBackground{
+        background-color: #FFCC99;
+}
+

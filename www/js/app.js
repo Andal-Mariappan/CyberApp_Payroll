@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var myApp = angular.module('starter', ['ionic', 'LocalStorageModule','tc.chartjs'])
+var myApp = angular.module('starter', ['ionic', 'LocalStorageModule', 'tc.chartjs'])
 
 
 .run(function($ionicPlatform) {
@@ -30,7 +30,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         .state('home', {
             url: '/views/home',
             templateUrl: 'views/home.html',
-            controller: 'employeeController'
+            controller: 'homeController'
         })
         .state('employeeDetail', {
             url: '/views/employeeDetail',
@@ -50,18 +50,26 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         .state('leaveDraft', {
             url: '/views/leaveDraft',
             templateUrl: 'views/leaveDraft.html',
-            
+
         })
         .state('register', {
             url: '/views/register',
             templateUrl: 'views/register.html',
             controller: 'registerController'
         })
-        
+        .state('intro', {
+            url: '/views/intro',
+            templateUrl: 'views/intro.html',
+            controller: 'introController'
+        })
+        .state('menu', {
+        url: '/views/menu',
+        templateUrl: 'views/menu.html',
+        controller: 'homeController'
+        })
 
 
-
-    $urlRouterProvider.otherwise('/views/logIn');
+    $urlRouterProvider.otherwise('/views/intro');
 
 });
 var serviceBase = 'http://cyberweb.azurewebsites.net/';
@@ -72,6 +80,6 @@ myApp.constant('ngAuthSettings', {
 myApp.config(function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
-myApp.run(['authService', function (authService) {
+myApp.run(['authService', function(authService) {
     authService.fillAuthData();
 }]);

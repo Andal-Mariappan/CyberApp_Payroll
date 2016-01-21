@@ -1,33 +1,46 @@
-<ion-content>
-    <div class="row row-bottom ">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col text-right"><a href="#/views/iogIn"><i class="ion-android-cancel iconsExit"></i></a></div>
-    </div>
-    <br>
-    <div class="text-center">
-        <p style="font-size: 250%; color:#FF9900"><b>09.00 PM</b></p>
-        <p style="font-size: 100%; color:#FF9900">19 January 2016</p>
-        <a href="#/views/employeeDetail">
-            <div>
-                <img src="img/simson.png" style="with:200px;height:200px">
+<ion-side-menus>
+    <ion-side-menu-content>
+        <ion-content>
+            <div class="row row-bottom ">
+                <div class="col text-left">
+                    <button menu-toggle="left" class=" button-icon icon ion-navicon-round iconsMenu"></button>
+                </div>
+                <div class="col"></div>
+                <div class="col text-right">
+                    <button class="button-icon ion-android-cancel iconsExit" ng-click="exitApp()"></button>
+                </div>
             </div>
-        </a>
-        <p style="font-size: 150%;">{{employeeData.FirstName}} {{employeeData.LastName}}</p>
-        <br>
-        <div class="padding">
-            <button class="button button-block positive">Check In</button>
-            <!-- <button class="button button-block positive">Check Out</button> -->
-        </div>
-        <br>
-        <!-- <p style="font-size: 150%;">Check In : 09:00 PM</p> -->
-        <br>
-        <br>
-        <br>
-        <div class="row row-bottom ">
-            <div class="col"><a href="#/views/leave"><i class="ion-ios-flower iconsLeave"></i></a></div>
-            <div class="col"><a href="#"><i class="ion-help-circled iconsAdj"></i></a></div>
-            <div class="col"><i class="ion-more icons iconsMore"></i></div>
-        </div>
-    </div>
-</ion-content>
+            <div class="text-center">
+                <br>
+                <p style="font-size: 300%; color:#FF9900"><b><span my-current-time="format"></span></b></p>
+                <br>
+                <p style="font-size: 150%; color:#555555"><b><span my-current-time2="format2"></span></b></p>
+                <a href="#/views/employeeDetail">
+                    <br>
+                    <br>
+                    <a href="#/views/employeeDetail">
+                        <img src="img/PicFinger.png" style="with:300px;height:300px" class="imgPicFinger">
+                    </a>
+            </div>
+        </ion-content>
+    </ion-side-menu-content>
+    <!-- Left menu -->
+    <ion-side-menu side="left" class="menuBackground">
+        <ion-header-bar class="bar-stable menuBackground ">
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu</h1>
+        </ion-header-bar>
+        <ion-content  >
+            <ion-list >
+                <ion-item menu-close href="#/views/leave" class="menuList">
+                    Leave
+                </ion-item>
+                <ion-item menu-close href="#" class="menuList">
+                    Adjust
+                </ion-item>
+                <ion-item menu-close href="#" class="menuList">
+                    More
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
