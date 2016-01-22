@@ -73,7 +73,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
 
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.tabs.style('standard');
-
+    
 });
 
 var serviceBase = 'http://cyberweb.azurewebsites.net/';
