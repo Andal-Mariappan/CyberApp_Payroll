@@ -45,7 +45,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         .state('leaveList', {
             url: '/views/leaveList',
             templateUrl: 'views/leaveList.html',
-            controller: 'leaveListController'
+            controller: 'leaveController'
         })
         .state('leaveDraft', {
             url: '/views/leaveDraft',
