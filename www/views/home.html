@@ -22,7 +22,7 @@
                 </a>
             </div>
             <div class="text-center">
-           <!--  <button class="button button-balanced" ng-init="services();">
+                <!--  <button class="button button-balanced" ng-init="services();">
                 button-balanced
             </button> -->
             </div>
@@ -31,10 +31,27 @@
     <!-- Left menu -->
     <ion-side-menu side="left" class="menuBackground">
         <ion-header-bar class="bar-stable menuBackground ">
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu</h1>
+            <div>
+                <img src="img/simson.png" style="with:30px;height:30px">
+                <label class="bar-header" style="font-size: 100%; ">Nuttakrittra Phumsawai</label>
+            </div>
         </ion-header-bar>
         <ion-content scroll="false">
-            <ion-list>
+            <div class="list">
+                <a class="item item-icon-left item-icon-right menuBackground" href="#/views/leave">
+                    <i class="icon ion-medkit"></i> Leave
+                    <i class="icon ion-ios-arrow-forward"></i>
+                </a>
+                <a class="item item-icon-left item-icon-right menuBackground" href="#">
+                    <i class="icon ion-android-alert"></i> Adjust
+                    <i class="icon ion-ios-arrow-forward"></i>
+                </a>
+                <a class="item item-icon-left item-icon-right menuBackground" href="#">
+                    <i class="icon ion-chatbubble-working"></i> ...
+                    <i class="icon ion-ios-arrow-forward"></i>
+                </a>
+            </div>
+            <!-- <ion-list>
                 <ion-item menu-close href="#/views/leave" class="menuList">
                     Leave&nbsp;&nbsp;&nbsp;<i class="ion-ios-medical-outline"></i>
                 </ion-item>
@@ -44,7 +61,7 @@
                 <ion-item menu-close href="#" class="menuList">
                     More&nbsp;&nbsp;&nbsp;<i class="ion-more"></i>
                 </ion-item>
-            </ion-list>
+            </ion-list> -->
         </ion-content>
     </ion-side-menu>
 </ion-side-menus>
