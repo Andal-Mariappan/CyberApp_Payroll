@@ -1,23 +1,22 @@
 myApp.controller('employeeController', ['$scope', 'employeeService', function($scope, employeeService) {
 
-    // $scope.tabname = "1";
-    //         $scope.selectTab = function(tab) {
-    //             $scope.tabname = tab;
-    //         };
+
+    // $scope.employeeData = [];
+
+    // employeeService.getEmployeeByEmail().then(function(results) {
+
+    //         $scope.employeeData = results.data;
+
+    //     }, function(error) {
+    //         alert(error.data.message);
+    //     })
+
     $scope.var = 1;
     $scope.click = function(num) {
         $scope.var = num;
     }
 
-    $scope.employeeData = [];
 
-    employeeService.getEmployeeByEmail().then(function(results) {
-
-        $scope.employeeData = results.data;
-
-    }, function(error) {
-        alert(error.data.message);
-    })
 
 
 
@@ -32,13 +31,12 @@ myApp.controller('employeeController', ['$scope', 'employeeService', function($s
         color: '#FF9900',
         highlight: '#FF9900',
         label: 'Leave'
-    },
-    {
+    }, {
         value: 13,
         color: '#BBBBBB',
         highlight: '#DDDDDD',
         label: 'Day'
-    } ];
+    }];
 
     // Chart.js Options
     $scope.options = {
@@ -73,5 +71,5 @@ myApp.controller('employeeController', ['$scope', 'employeeService', function($s
         //String - A legend template
         legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
     };
-    
+
 }]);

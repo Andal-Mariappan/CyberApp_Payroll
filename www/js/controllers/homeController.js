@@ -1,14 +1,20 @@
 myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup) {
 
-        $scope.employeeData = [];
 
-        employeeService.getEmployeeByEmail().then(function(results) {
+        $scope.services = function() {
+            alert("1/2");
+            $scope.employeeData = [];
 
-            $scope.employeeData = results.data;
+            employeeService.getEmployeeByEmail().then(function(results) {
 
-        }, function(error) {
-            alert(error.data.message);
-        })
+                $scope.employeeData = results.data;
+                alert("2/2  " + $scope.employeeData.FirstName);
+
+            }, function(error) {
+                alert(error.data.message);
+            })
+
+        }
 
         $scope.exitApp = function() {
 
@@ -20,6 +26,22 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
             confirmPopup.then(function(res) {
                 if (res) {
                     console.log('You are sure');
+                    ionic.Platform.ready(function() {
+                        // will execute when device is ready, or immediately if the device is already ready.
+                    });
+
+                    var deviceInformation = ionic.Platform.device();
+
+                    var isWebView = ionic.Platform.isWebView();
+                    var isIPad = ionic.Platform.isIPad();
+                    var isIOS = ionic.Platform.isIOS();
+                    var isAndroid = ionic.Platform.isAndroid();
+                    var isWindowsPhone = ionic.Platform.isWindowsPhone();
+
+                    var currentPlatform = ionic.Platform.platform();
+                    var currentPlatformVersion = ionic.Platform.version();
+
+                    ionic.Platform.exitApp(); // stops the app
                 } else {
                     console.log('You are not sure');
                 }

@@ -1,6 +1,6 @@
 <ion-side-menus>
     <ion-side-menu-content>
-        <ion-content>
+        <ion-content scroll="false">
             <div class="row row-bottom ">
                 <div class="col text-left">
                     <button menu-toggle="left" class=" button-icon icon ion-navicon-round iconsMenu"></button>
@@ -15,12 +15,16 @@
                 <p style="font-size: 300%; color:#FF9900"><b><span my-current-time="format"></span></b></p>
                 <br>
                 <p style="font-size: 150%; color:#555555"><b><span my-current-time2="format2"></span></b></p>
+                <br>
+                <br>
                 <a href="#/views/employeeDetail">
-                    <br>
-                    <br>
-                    <a href="#/views/employeeDetail">
-                        <img src="img/PicFinger.png" style="with:300px;height:300px" class="imgPicFinger">
-                    </a>
+                    <img src="img/PicFinger.png" style="with:300px;height:300px" class="imgPicFinger">
+                </a>
+            </div>
+            <div class="text-center">
+           <!--  <button class="button button-balanced" ng-init="services();">
+                button-balanced
+            </button> -->
             </div>
         </ion-content>
     </ion-side-menu-content>
@@ -29,16 +33,16 @@
         <ion-header-bar class="bar-stable menuBackground ">
             <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu</h1>
         </ion-header-bar>
-        <ion-content  >
-            <ion-list >
+        <ion-content scroll="false">
+            <ion-list>
                 <ion-item menu-close href="#/views/leave" class="menuList">
-                    Leave
+                    Leave&nbsp;&nbsp;&nbsp;<i class="ion-ios-medical-outline"></i>
                 </ion-item>
                 <ion-item menu-close href="#" class="menuList">
-                    Adjust
+                    Adjust&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="ion-upload"></i>
                 </ion-item>
                 <ion-item menu-close href="#" class="menuList">
-                    More
+                    More&nbsp;&nbsp;&nbsp;<i class="ion-more"></i>
                 </ion-item>
             </ion-list>
         </ion-content>

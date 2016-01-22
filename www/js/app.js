@@ -3,10 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var myApp = angular.module('starter', ['ionic', 'LocalStorageModule', 'tc.chartjs'])
+var myApp = angular.module('starter', ['ionic', 'LocalStorageModule', 'tc.chartjs','ngCordova'])
 
 
-.run(function($ionicPlatform) {
+myApp.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
 
         if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -19,7 +19,7 @@ var myApp = angular.module('starter', ['ionic', 'LocalStorageModule', 'tc.chartj
     });
 })
 
-myApp.config(function($stateProvider, $urlRouterProvider) {
+myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
     $stateProvider
         .state('logIn', {
@@ -57,22 +57,25 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/register.html',
             controller: 'registerController'
         })
-
         .state('intro', {
-        url: '/views/intro',
-        templateUrl: 'views/intro.html',
-        controller: 'introController'
+            url: '/views/intro',
+            templateUrl: 'views/intro.html',
+            controller: 'introController'
         })
-
         .state('capture', {
-        url: '/views/capture',
-        templateUrl: 'views/capture.html',
+            url: '/views/capture',
+            templateUrl: 'views/capture.html',
+            controller: 'employeeController'
         })
 
 
     $urlRouterProvider.otherwise('/views/intro');
 
+    $ionicConfigProvider.tabs.position('bottom');
+    $ionicConfigProvider.tabs.style('standard');
+
 });
+
 var serviceBase = 'http://cyberweb.azurewebsites.net/';
 myApp.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,

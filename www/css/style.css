@@ -1,9 +1,5 @@
 /* Empty. Add your own CSS if you like */
 
-.tabs-assertive {
-    background-color: #FF9900;
-}
-
 .ion-arrow-swap {
     color: white;
 }
@@ -115,6 +111,7 @@ img {
     -webkit-user-drag: none;
     border-radius: 50%;
 }
+
 .imgPicFinger {
     -webkit-user-drag: none;
     border-radius: 0%;
@@ -185,14 +182,15 @@ img {
 
 .intro {
     margin-top: 220px;
-   
-}
-.menuList{
-     margin-top: 3px;
-     color: #444444;
-     background-color: #FFCC66;
-}
-.menuBackground{
-        background-color: #FFCC99;
 }
 
+.menuList {
+    margin-top: 2px;
+    color: #444444;
+    background-color: #FFCC66;
+    padding: 10px 49px 10px 0px;
+}
+
+.menuBackground {
+    background-color: #DDDDDD;
+}

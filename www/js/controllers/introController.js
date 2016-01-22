@@ -1,5 +1,13 @@
-myApp.controller('introController', ['$scope','$timeout','$location', function($scope,$timeout,$location) {
-    
+myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordovaDevice', function($scope, $timeout, $location, $cordovaDevice) {
+
+
+
+    document.addEventListener("deviceready", function() {
+
+        $scope.platforms = $cordovaDevice.getPlatform();
+        $scope.device = $cordovaDevice.getUUID();
+
+    }, false);
 
 
     $timeout(function() {

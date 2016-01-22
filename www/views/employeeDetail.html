@@ -1,6 +1,7 @@
-<ion-content>
-</ion-content>
-<ion-tabs class="tabs-assertive tabs-icon-only">
+<ion-view >
+  <ion-content>
+  </ion-content>
+  <ion-tabs class="tabs-assertive tabs-icon-only">
     <ion-tab title="Home" icon-on="icon ion-arrow-swap" icon-off="icon ion-arrow-swap">
         <div class="row">
             <div class="col">
@@ -8,15 +9,14 @@
             </div>
         </div>
         <br>
+        <br>
         <div class="text-center">
-            <a href="#/views/employeeDetail">
-                <div>
-                    <a href="#/views/capture">
-                        <img src="img/simson.png" style="with:200px;height:200px">
-                    </a>
-                </div>
-            </a>
-            <p style="font-size: 150%;">{{employeeData.FirstName}} Tingtang {{employeeData.LastName}}</p>
+            <div>
+                <a href="#/views/capture">
+                    <img src="img/simson.png" style="with:200px;height:200px">
+                </a>
+            </div>
+            <p style="font-size: 150%;">{{employeeData.FirstName}} {{employeeData.LastName}}</p>
             <br>
             <br>
             <div class="row">
@@ -50,6 +50,7 @@
             <div class="col text-right">
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col col-40">
                 <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data" chart-legend="doughnutChart1"></canvas>
@@ -123,6 +124,7 @@
             <div class="col text-right">
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col col-10">
             </div>
@@ -169,3 +171,6 @@
         </div>
     </ion-tab>
 </ion-tabs>
+
+</ion-view>
+
