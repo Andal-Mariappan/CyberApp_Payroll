@@ -204,3 +204,8 @@ img {
     margin-left: 10px;
     margin-top: 5px;
 }
+.itemList
+{
+        border-width: 1px;
+    border-style: solid;
+}

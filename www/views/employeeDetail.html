@@ -24,7 +24,7 @@
                         <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 80px;"></i>
                     </div>
                     <div class="col col-66 text-left">
-                        <h4 style="color: green; font-size: 45px;">09.00 PM</h4>
+                        <h4 style="color: green; font-size: 45px;">09.00 AM</h4>
                     </div>
                 </div>
                 <div class="row">
@@ -32,7 +32,7 @@
                         <i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 80px;"></i>
                     </div>
                     <div class="col col-66 text-left">
-                        <h4 style="color: red; font-size: 45px;">09.00 PM</h4>
+                        <h4 style="color: red; font-size: 45px;">08.02 PM</h4>
                     </div>
                 </div>
                 <!-- <p style="font-size: 150%;">Check In : 09:00 PM</p> -->
@@ -52,7 +52,7 @@
             </div>
             <br>
             <div class="row">
-                <div class="col col-50 " >
+                <div class="col col-50 ">
                     <canvas tc-chartjs-doughnut="" chart-options="options" chart-data="data" chart-legend="doughnutChart1"></canvas>
                 </div>
                 <div class="col col-10 text-center ">
@@ -80,34 +80,56 @@
                 </div>
             </div>
             <div ng-show="var=='1'">
-                <div class="list">
-                    <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
+                <div class="list ">
+                    <a href="#" class="item item-icon-left " style="background-color: #EEEEEE;">
+                        <!--                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                        <h2 style="font-weight: bold;">01 December 2015</h2>
+                        <div class="row">
+                        <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i><p>09.00 AM</p>
+                        <i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i><p>08.02 PM</p>
+                        </div> -->
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">Sick Leave | 15 Dec 2015</h2>
-                        <p>ไปพบแพทย์เพื่อ Follw Up</p>
-                        <span class="badgeleave badge-adjust"><p id="fontStatus">A</p></span>
-                    </a>
-                    <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
-                        <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">Personal Leave | 24 Dec 2015</h2>
-                        <p>ไปทำใบขับขี่</p>
-                        <span class="badgeleave badge-wait "><p id="fontStatus">W</p></span>
-                    </a>
+                        <h2 style="font-weight: bold;">01 December 2015</h2>
+                        <div class="row">
+                            <div class="col col-10 ">
+                            <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i></div>
+                        <div class="col col-25">
+                            <p>09.00 AM</p>
+                        </div>
+                        <div class="col col-10"><i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i></div>
+                        <div class="col col-25">
+                            <p>08.02 PM</p>
+                        </div>
                 </div>
+                </a>
+                <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
+                    <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                    <h2 style="font-weight: bold;">02 December 2015</h2>
+                        <div class="row">
+                            <div class="col col-10 ">
+                            <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i></div>
+                        <div class="col col-25">
+                            <p>08.32 AM</p>
+                        </div>
+                        <div class="col col-10"><i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i></div>
+                        <div class="col col-25">
+                            <p>07.57 PM</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
             </div>
             <div ng-show="var=='2'">
                 <div class="list">
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">07 Dec 2015</h2>
-                        <p>ลืมโทรศัพท์ไว้ที่บ้าน</p>
-                        <span class="badgeleave badge-reject"><p id="fontStatus">R</p></span>
+                        <h2 style="font-weight: bold;">Sick Leave | 15 December 2015</h2>
+                        <p>ไปพบแพทย์เพื่อ Follw Up</p>
                     </a>
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">24 Dec 2015</h2>
-                        <p>on site @True</p>
-                        <span class="badgeleave badge-adjust"><p id="fontStatus">A</p></span>
+                        <h2 style="font-weight: bold;">Personal Leave | 24 December 2015</h2>
+                        <p>ไปทำใบขับขี่</p>
                     </a>
                 </div>
             </div>
@@ -141,13 +163,13 @@
                 <div class="list">
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">Sick Leave | 15 Dec 2015</h2>
+                        <h2 style="font-weight: bold;">Sick Leave | 15 December 2015</h2>
                         <p>ไปพบแพทย์เพื่อ Follw Up</p>
                         <span class="badgeleave badge-adjust"><p id="fontStatus">A</p></span>
                     </a>
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">Personal Leave | 24 Dec 2015</h2>
+                        <h2 style="font-weight: bold;">Personal Leave | 24 December 2015</h2>
                         <p>ไปทำใบขับขี่</p>
                         <span class="badgeleave badge-wait "><p id="fontStatus">W</p></span>
                     </a>
@@ -157,13 +179,13 @@
                 <div class="list">
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">07 Dec 2015</h2>
+                        <h2 style="font-weight: bold;">07 December 2015</h2>
                         <p>ลืมโทรศัพท์ไว้ที่บ้าน</p>
                         <span class="badgeleave badge-reject"><p id="fontStatus">R</p></span>
                     </a>
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">24 Dec 2015</h2>
+                        <h2 style="font-weight: bold;">24 December 2015</h2>
                         <p>on site @True</p>
                         <span class="badgeleave badge-adjust"><p id="fontStatus">A</p></span>
                     </a>
