@@ -1,4 +1,4 @@
-myApp.controller('employeeController', ['$scope', 'employeeService', function($scope, employeeService) {
+myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSocialSharing', '$location', '$timeout', '$ionicLoading', function($scope, employeeService, $cordovaSocialSharing, $location, $timeout, $ionicLoading) {
 
 
     // $scope.employeeData = [];
@@ -10,15 +10,39 @@ myApp.controller('employeeController', ['$scope', 'employeeService', function($s
     //     }, function(error) {
     //         alert(error.data.message);
     //     })
+    $scope.shareCard = function() {
+        $location.path('/views/captureShareCard');
+ 
+        $timeout(function() {
+            var imageLink;
+            console.log('Calling from CapturePhoto');
+            navigator.screenshot.save(function(error, res) {
+                if (error) {
+                    console.error(error);
+                } else {
+                    console.log('ok', res.filePath); //should be path/to/myScreenshot.jpg
+                    //For android
+                    imageLink = res.filePath;
+                    window.plugins.socialsharing.share(null, null, 'file://' + imageLink, null);
+
+                    //For iOS
+                    //window.plugins.socialsharing.share(null, null, imageLink, null)
+                    $location.path('/views/capture');
+                    
+                }
+            }, 'jpg', 50, 'myScreenShot');
+
+        }, 300);
+
+
+
+    }
+
 
     $scope.var = 1;
     $scope.click = function(num) {
         $scope.var = num;
     }
-
-
-
-
 
     // Chart.js
     $scope.data = [{
@@ -70,6 +94,8 @@ myApp.controller('employeeController', ['$scope', 'employeeService', function($s
 
         //String - A legend template
         legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
-    };
+    }
+
+
 
 }]);

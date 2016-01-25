@@ -1,20 +1,5 @@
-myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup) {
+myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup, $cordovaGeolocation, $ionicLoading, $location) {
 
-
-        $scope.services = function() {
-            alert("1/2");
-            $scope.employeeData = [];
-
-            employeeService.getEmployeeByEmail().then(function(results) {
-
-                $scope.employeeData = results.data;
-                alert("2/2  " + $scope.employeeData.FirstName);
-
-            }, function(error) {
-                alert(error.data.message);
-            })
-
-        }
 
         $scope.exitApp = function() {
 
@@ -47,8 +32,46 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
                 }
             });
         }
+        $scope.checkIn = function() {
+            var posOptions = {
+                timeout: 10000,
+                enableHighAccuracy: true
+            };
+
+
+            $ionicLoading.show();
+
+            $cordovaGeolocation
+                .getCurrentPosition(posOptions)
+                .then(function(position) {
+
+                    $ionicLoading.hide();
+
+                    var lat = position.coords.latitude;
+                    var lng = position.coords.longitude;
+
+                    alert("Got position: " + lat + ", " + lng);
+
+                    $location.path('views/employeeDetail');
+
+                }, function(err) {
+
+
+                    if (error.code == PositionError.PERMISSION_DENIED) {
+                        alert("Permission denied. check setting");
+                    } else if (error.code == PositionError.POSITION_UNAVAILABLE) {
+                        alert("Cannot get position. May be problem with network or can't get a satellite fix.");
+                    } else if (error.code == PositionError.TIMEOUT) {
+                        alert("Geolocation is timed out.");
+                    } else {
+                        alert(error.message);
+                    }
+                });
+        }
+
 
     }])
+
     // Register the 'myCurrentTime' directive factory method.
     // We inject $interval and dateFilter service since the factory method is DI.
     .directive('myCurrentTime', ['$interval', 'dateFilter',
