@@ -1,80 +1,80 @@
-myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup, $cordovaGeolocation, $ionicLoading, $location) {
+myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', '$cordovaDialogs', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup, $cordovaGeolocation, $ionicLoading, $location, $cordovaDialogs) {
 
 
-        $scope.exitApp = function() {
+    $scope.exitApp = function() {
 
-            var confirmPopup = $ionicPopup.confirm({
-                title: 'Confirm exit application',
-                template: 'Are you sure you want to exit?'
-            });
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'Confirm exit application',
+            template: 'Are you sure you want to exit?'
+        });
 
-            confirmPopup.then(function(res) {
-                if (res) {
-                    console.log('You are sure');
-                    ionic.Platform.ready(function() {
-                        // will execute when device is ready, or immediately if the device is already ready.
-                    });
+        confirmPopup.then(function(res) {
+            if (res) {
+                console.log('You are sure');
+                ionic.Platform.ready(function() {
+                    // will execute when device is ready, or immediately if the device is already ready.
+                });
 
-                    var deviceInformation = ionic.Platform.device();
+                var deviceInformation = ionic.Platform.device();
+                var isWebView = ionic.Platform.isWebView();
+                var isIPad = ionic.Platform.isIPad();
+                var isIOS = ionic.Platform.isIOS();
+                var isAndroid = ionic.Platform.isAndroid();
+                var isWindowsPhone = ionic.Platform.isWindowsPhone();
+                var currentPlatform = ionic.Platform.platform();
+                var currentPlatformVersion = ionic.Platform.version();
 
-                    var isWebView = ionic.Platform.isWebView();
-                    var isIPad = ionic.Platform.isIPad();
-                    var isIOS = ionic.Platform.isIOS();
-                    var isAndroid = ionic.Platform.isAndroid();
-                    var isWindowsPhone = ionic.Platform.isWindowsPhone();
+                ionic.Platform.exitApp(); // stops the app
+            } else {
+                console.log('You are not sure');
+            }
+        });
+    }
+    $scope.checkIn = function() {
 
-                    var currentPlatform = ionic.Platform.platform();
-                    var currentPlatformVersion = ionic.Platform.version();
+        var posOptions = {
+            timeout: 10000,
+            enableHighAccuracy: true
+        };
 
-                    ionic.Platform.exitApp(); // stops the app
+        $ionicLoading.show();
+
+        $cordovaGeolocation
+            .getCurrentPosition(posOptions)
+            .then(function(position) {
+
+                $ionicLoading.hide();
+                $cordovaDialogs.beep(1);
+
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+
+                alert("Got position: " + lat + ", " + lng);
+
+                
+                $location.path('views/employeeDetail');
+
+            }, function(err) {
+
+
+                if (error.code == PositionError.PERMISSION_DENIED) {
+                    alert("Permission denied. check setting");
+                } else if (error.code == PositionError.POSITION_UNAVAILABLE) {
+                    alert("Cannot get position. May be problem with network or can't get a satellite fix.");
+                } else if (error.code == PositionError.TIMEOUT) {
+                    alert("Geolocation is timed out.");
                 } else {
-                    console.log('You are not sure');
+                    alert(error.message);
                 }
             });
-        }
-        $scope.checkIn = function() {
-            var posOptions = {
-                timeout: 10000,
-                enableHighAccuracy: true
-            };
+    }
 
 
-            $ionicLoading.show();
+}])
 
-            $cordovaGeolocation
-                .getCurrentPosition(posOptions)
-                .then(function(position) {
-
-                    $ionicLoading.hide();
-
-                    var lat = position.coords.latitude;
-                    var lng = position.coords.longitude;
-
-                    alert("Got position: " + lat + ", " + lng);
-
-                    $location.path('views/employeeDetail');
-
-                }, function(err) {
-
-
-                    if (error.code == PositionError.PERMISSION_DENIED) {
-                        alert("Permission denied. check setting");
-                    } else if (error.code == PositionError.POSITION_UNAVAILABLE) {
-                        alert("Cannot get position. May be problem with network or can't get a satellite fix.");
-                    } else if (error.code == PositionError.TIMEOUT) {
-                        alert("Geolocation is timed out.");
-                    } else {
-                        alert(error.message);
-                    }
-                });
-        }
-
-
-    }])
-
-    // Register the 'myCurrentTime' directive factory method.
-    // We inject $interval and dateFilter service since the factory method is DI.
-    .directive('myCurrentTime', ['$interval', 'dateFilter',
+// Register the 'myCurrentTime' directive factory method.
+// We inject $interval and dateFilter service since the factory method is DI.
+.directive('myCurrentTime', ['$interval', 'dateFilter',
         function($interval, dateFilter) {
             // return the directive link function. (compile function not needed)
             return function(scope, element, attrs) {

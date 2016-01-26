@@ -3,7 +3,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
 
 
 
-     
+
 
 
 
@@ -17,12 +17,6 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     //         alert(error.data.message);
     //     })
     $scope.shareCard = function() {
-
-        $location.path('/views/captureShareCard');
-
-
-
-
         $timeout(function() {
             var imageLink;
             console.log('Calling from CapturePhoto');
@@ -98,7 +92,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         leaveType: "Personal Leave",
         leaveStartDate: "28 December 2015",
         leaveDetail: "ไปทำบัตรประชาชน",
-        leaveStatus: "W"
+        leaveStatus: "R"
     }]
 
 
@@ -113,18 +107,18 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     }];
 
     $scope.empData = [{
-        ID : "01",
-        Image : "",
-        FirstName : "Nuttakrittra",
-        LastName : "Phumsawai",
-        JobTitle : "Programmer",
-        OfficeAddress : "",
-        Tel : "0945506035",
-        Facebook : "/tingtang.th",
-        Line : "tingtang35",
-        Email : "tingtang35@gmail.com",
-        WorkTimes : "",
-        Request :  ""
+        ID: "01",
+        Image: "",
+        FirstName: "Nuttakrittra",
+        LastName: "Phumsawai",
+        JobTitle: "Programmer",
+        OfficeAddress: " Cyber Advance System And Network Co.,Ltd<br>บริษัท ไซเบอร์ แอดวานซ์ ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด<br>55/7 ม.11 ถ.วงแหวนลำลูกกา ต.บึงคำพร้อย<br>อ.ลำลูกกา จ.ปทุมธานี 12150 ",
+        Tel: "0945506035",
+        Facebook: "/tingtang.th",
+        Line: "tingtang35",
+        Email: "tingtang35@gmail.com",
+        WorkTimes: "",
+        Request: ""
     }]
 
 

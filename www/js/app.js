@@ -72,6 +72,11 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
             templateUrl: 'views/captureShareCard.html',
             controller: 'employeeController'
         })
+        .state('viewTeams', {
+            url: '/views/viewTeams',
+            templateUrl: 'views/viewTeams.html',
+            controller: 'viewTeamsController'
+        })
 
 
 

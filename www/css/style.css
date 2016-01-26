@@ -107,7 +107,7 @@ input[type="radio"] {
     
 }*/
 
-img {
+.imgRadius {
     -webkit-user-drag: none;
     border-radius: 50%;
 }
