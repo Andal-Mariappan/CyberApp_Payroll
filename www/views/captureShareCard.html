@@ -2,7 +2,7 @@
     <br>
     <br>
     <br>
-    <div >
+    <div ng-repeat="employeeData in empData">
         <div class="row" ng-init="shareCard()">
             <div class="col col-20">
                 <div id="employeeDetail">
@@ -11,7 +11,7 @@
             </div>
             <div class="col col-80 text-center">
                 <h2 style="color: #FF9900;">{{employeeData.FirstName}} {{employeeData.LastName}}</h2>
-                <h4>Programmer</h4>
+                <h4>{{employeeData.JobTitle}}</h4>
             </div>
         </div>
         <div class="row">

@@ -102,6 +102,21 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         adjustStatus: "A"
     }];
 
+    $scope.empData = [{
+        ID : "01",
+        Image : "",
+        FirstName : "Nuttakrittra",
+        LastName : "Phumsawai",
+        JobTitle : "Programmer",
+        OfficeAddress : "",
+        Tel : "0945506035",
+        Facebook : "/tingtang.th",
+        Line : "tingtang35",
+        Email : "tingtang35@gmail.com",
+        WorkTimes : "",
+        Request :  ""
+    }]
+
 
     // Chart.js
     $scope.dataSummary = [{
