@@ -1,5 +1,14 @@
 myApp.controller('leaveController', ['$scope', 'leaveService', function($scope, leaveService) {
 
+    $scope.data = {
+        active: false
+    };
+    $scope.toggle = function() {
+        $scope.data.active = !$scope.data.active;
+    };
+
+
+   
     $scope.createLeavesData = [];
     $scope.updateLeavesData = [];
     $scope.approveLeavesData = [];
@@ -45,8 +54,8 @@ myApp.controller('leaveController', ['$scope', 'leaveService', function($scope, 
 
         $scope.getLeavesData = results.data;
 
-    // }, function(error) {
-    //     alert(error.data.message);
+        // }, function(error) {
+        //     alert(error.data.message);
     })
 
     // leaveService.deleteLeavesData().then(function(results) {

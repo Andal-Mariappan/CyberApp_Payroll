@@ -48,6 +48,9 @@
         </div>
     </div>
     <hr>
+
+
+    
     <div class="row">
         <div class="col text-left">
             <p style="font-size: 120%; font-weight: bold;">จำนวน</p>
@@ -65,7 +68,7 @@
         <li class="item item-toggle" style="font-weight: bold; background-color: #EEEEEE; border-style: none;">
             Half-Day
             <label class="toggle toggle-balanced">
-                <input type="checkbox">
+                <input type="checkbox" ng-click="toggle()">
                 <div class="track">
                     <div class="handle"></div>
                 </div>
@@ -73,7 +76,7 @@
         </li>
     </div>
     <hr>
-    <div class="row">
+    <div class="row" ng-show="data.active">
         <div class="col text-left">
             <p style="font-size: 120%; font-weight: bold;">จำนวน</p>
         </div>
