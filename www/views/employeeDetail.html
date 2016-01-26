@@ -19,20 +19,22 @@
                 <p style="font-size: 150%;">{{employeeData.FirstName}} {{employeeData.LastName}}</p>
                 <br>
                 <br>
-                <div class="row">
-                    <div class="col col-33">
-                        <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 80px;"></i>
+                <div ng-repeat="item in chkIn " ng-if="$last">
+                    <div class="row">
+                        <div class="col col-33">
+                            <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 80px;"></i>
+                        </div>
+                        <div class="col col-66 text-left">
+                            <h4 style="color: green; font-size: 45px;">{{item.chkInTime}}</h4>
+                        </div>
                     </div>
-                    <div class="col col-66 text-left">
-                        <h4 style="color: green; font-size: 45px;">09:00 AM</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-33">
-                        <i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 80px;"></i>
-                    </div>
-                    <div class="col col-66 text-left">
-                        <h4 style="color: red; font-size: 45px;">08:02 PM</h4>
+                    <div class="row">
+                        <div class="col col-33">
+                            <i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 80px;"></i>
+                        </div>
+                        <div class="col col-66 text-left">
+                            <h4 style="color: red; font-size: 45px;">{{item.chkOutTime}}</h4>
+                        </div>
                     </div>
                 </div>
                 <!-- <p style="font-size: 150%;">Check In : 09:00 PM</p> -->
@@ -92,16 +94,16 @@
                         <h2 style="font-weight: bold;">{{item.chkInDate}}</h2>
                         <div class="row">
                             <div class="col col-10 ">
-                            <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i></div>
-                        <div class="col col-25">
-                            <p>{{item.chkInTime}}</p>
+                                <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i></div>
+                            <div class="col col-25">
+                                <p>{{item.chkInTime}}</p>
+                            </div>
+                            <div class="col col-10"><i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i></div>
+                            <div class="col col-25">
+                                <p>{{item.chkOutTime}}</p>
+                            </div>
                         </div>
-                        <div class="col col-10"><i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i></div>
-                        <div class="col col-25">
-                            <p>{{item.chkOutTime}}</p>
-                        </div>
-                </div>
-                </a>
+                    </a>
                 </div>
             </div>
             <div ng-show="var=='2'">
@@ -157,7 +159,6 @@
                         <p>{{item.adjustDetail}}</p>
                         <span class="badgeleave badge-reject"><p id="fontStatus">{{item.adjustStatus}}</p></span>
                     </a>
-
                 </div>
             </div>
         </ion-tab>
