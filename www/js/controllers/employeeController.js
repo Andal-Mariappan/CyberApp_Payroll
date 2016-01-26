@@ -77,7 +77,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         chkOutTime: "07:38 PM"
     },{
         chkInDate: "04 December 2015",
-        chkInTime: "09:362 AM",
+        chkInTime: "09:32 AM",
         chkOutTime: ""
     }];
 
