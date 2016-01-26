@@ -41,13 +41,13 @@ myApp.controller('leaveController', ['$scope', 'leaveService', function($scope, 
     //     alert(error.data.message);
     // })
 
-    leaveService.getLeaves().then(function(results) {
+    // leaveService.getLeaves().then(function(results) {
 
-        $scope.getLeavesData = results.data;
+    //     $scope.getLeavesData = results.data;
 
-    // }, function(error) {
-    //     alert(error.data.message);
-    })
+    // // }, function(error) {
+    // //     alert(error.data.message);
+    // })
 
     // leaveService.deleteLeavesData().then(function(results) {
 
