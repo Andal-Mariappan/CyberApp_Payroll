@@ -1,6 +1,12 @@
 myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSocialSharing', '$location', '$timeout', '$ionicLoading', function($scope, employeeService, $cordovaSocialSharing, $location, $timeout, $ionicLoading) {
 
 
+
+
+     
+
+
+
     // $scope.employeeData = [];
 
     // employeeService.getEmployeeByEmail().then(function(results) {
@@ -12,7 +18,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     //     })
     $scope.shareCard = function() {
         $location.path('/views/captureShareCard');
- 
+
         $timeout(function() {
             var imageLink;
             console.log('Calling from CapturePhoto');
@@ -28,7 +34,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
                     //For iOS
                     //window.plugins.socialsharing.share(null, null, imageLink, null)
                     $location.path('/views/capture');
-                    
+
                 }
             }, 'jpg', 50, 'myScreenShot');
 
@@ -66,15 +72,15 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         chkInDate: "01 December 2015",
         chkInTime: "09:02 AM",
         chkOutTime: "07:28 PM"
-    },{
+    }, {
         chkInDate: "02 December 2015",
         chkInTime: "08:44 AM",
         chkOutTime: "07:59 PM"
-    },{
+    }, {
         chkInDate: "03 December 2015",
         chkInTime: "08:24 AM",
         chkOutTime: "07:38 PM"
-    },{
+    }, {
         chkInDate: "04 December 2015",
         chkInTime: "09:362 AM",
         chkOutTime: ""
@@ -84,7 +90,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         leaveType: "Sick Leave",
         leaveStartDate: "01 December 2015",
         leaveDetail: "ท้องเสีย"
-    },{
+    }, {
         leaveType: "Personal Leave",
         leaveStartDate: "24 December 2015",
         leaveDetail: "ไปทำใบขับขี่"
@@ -108,7 +114,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     }];
 
 
-        $scope.adjust = [{
+    $scope.adjust = [{
         adjustDate: "07 December 2015",
         adjustDetail: "ลืมโทรศัพท์ไว้ที่บ้าน",
         adjustStatus: "R"

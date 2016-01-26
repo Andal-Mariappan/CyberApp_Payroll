@@ -67,6 +67,10 @@
                 </div>
             </div>
             <hr>
+
+
+ 
+
             <div class="row">
                 <div class="col col-10">
                 </div>
@@ -79,8 +83,11 @@
                 <div class="col col-10">
                 </div>
             </div>
+            <ion-scroll overflow-scroll="auto">
             <div ng-show="var=='1'">
+                
                 <div class="list ">
+
                     <a href="#" class="item item-icon-left " style="background-color: #EEEEEE;" ng-repeat="item in chkIn">
                         <!--                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
                         <h2 style="font-weight: bold;">01 December 2015</h2>
@@ -102,8 +109,12 @@
                         </div>
                 </div>
                 </a>
+
                 </div>
+
             </div>
+             </ion-scroll>
+             <ion-scroll>
             <div ng-show="var=='2'">
                 <div class="list">
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat=" item in leaved">
@@ -113,6 +124,7 @@
                     </a>
                 </div>
             </div>
+            </ion-scroll>
         </ion-tab>
         <ion-tab title="Settings" icon-on="icon ion-document" icon-off="icon ion-document">
             <!-- Tab 3 content -->
