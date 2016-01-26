@@ -9622,16 +9622,16 @@ a.button {
   -webkit-transition-property: opacity, -webkit-transform, box-shadow;
   transition-property: opacity, transform, box-shadow; }
 
-[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+[nav-view-transition="ios"][nav-view-direction="none"], [nav-view-transition="ios"][nav-view-direction="none"] {
   background-color: #000; }
 
 [nav-view-transition="ios"] [nav-view="active"],
-[nav-view-transition="ios"][nav-view-direction="forward"] [nav-view="entering"],
-[nav-view-transition="ios"][nav-view-direction="back"] [nav-view="leaving"] {
+[nav-view-transition="ios"][nav-view-direction="none"] [nav-view="entering"],
+[nav-view-transition="ios"][nav-view-direction="none"] [nav-view="leaving"] {
   z-index: 3; }
 
-[nav-view-transition="ios"][nav-view-direction="back"] [nav-view="entering"],
-[nav-view-transition="ios"][nav-view-direction="forward"] [nav-view="leaving"] {
+[nav-view-transition="ios"][nav-view-direction="none"] [nav-view="entering"],
+[nav-view-transition="ios"][nav-view-direction="none"] [nav-view="leaving"] {
   z-index: 2; }
 
 [nav-bar-transition="ios"] .title,
@@ -9666,12 +9666,12 @@ a.button {
   transition-property: transform; }
 
 [nav-view-transition="android"] [nav-view="active"],
-[nav-view-transition="android"][nav-view-direction="forward"] [nav-view="entering"],
-[nav-view-transition="android"][nav-view-direction="back"] [nav-view="leaving"] {
+[nav-view-transition="android"][nav-view-direction="none"] [nav-view="entering"],
+[nav-view-transition="android"][nav-view-direction="none"] [nav-view="leaving"] {
   z-index: 3; }
 
-[nav-view-transition="android"][nav-view-direction="back"] [nav-view="entering"],
-[nav-view-transition="android"][nav-view-direction="forward"] [nav-view="leaving"] {
+[nav-view-transition="android"][nav-view-direction="none"] [nav-view="entering"],
+[nav-view-transition="android"][nav-view-direction="none"] [nav-view="leaving"] {
   z-index: 2; }
 
 [nav-bar-transition="android"] .title,

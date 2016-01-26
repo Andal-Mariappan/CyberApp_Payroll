@@ -17,7 +17,11 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     //         alert(error.data.message);
     //     })
     $scope.shareCard = function() {
+
         $location.path('/views/captureShareCard');
+
+
+
 
         $timeout(function() {
             var imageLink;
@@ -50,6 +54,80 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         $scope.var = num;
     }
 
+
+
+    $scope.chkIn = [{
+        chkInDate: "01 December 2015",
+        chkInTime: "09:02 AM",
+        chkOutTime: "07:28 PM"
+    }, {
+        chkInDate: "02 December 2015",
+        chkInTime: "08:44 AM",
+        chkOutTime: "07:59 PM"
+    }, {
+        chkInDate: "03 December 2015",
+        chkInTime: "08:24 AM",
+        chkOutTime: "07:38 PM"
+    }, {
+        chkInDate: "04 December 2015",
+        chkInTime: "09:32 AM",
+        chkOutTime: ""
+    }]
+
+    $scope.leaved = [{
+        leaveType: "Sick Leave",
+        leaveStartDate: "01 December 2015",
+        leaveDetail: "ท้องเสีย"
+    }, {
+        leaveType: "Personal Leave",
+        leaveStartDate: "24 December 2015",
+        leaveDetail: "ไปทำใบขับขี่"
+    }]
+
+    $scope.request = [{
+        leaveType: "Sick Leave",
+        leaveStartDate: "15 December 2015",
+        leaveDetail: "ไปพบแพทย์เพื่อ Follow Up",
+        leaveStatus: "A"
+    }, {
+        leaveType: "Personal Leave",
+        leaveStartDate: "24 December 2015",
+        leaveDetail: "ไปทำใบขับขี่",
+        leaveStatus: "W"
+    }, {
+        leaveType: "Personal Leave",
+        leaveStartDate: "28 December 2015",
+        leaveDetail: "ไปทำบัตรประชาชน",
+        leaveStatus: "W"
+    }]
+
+
+    $scope.adjust = [{
+        adjustDate: "07 December 2015",
+        adjustDetail: "ลืมโทรศัพท์ไว้ที่บ้าน",
+        adjustStatus: "R"
+    }, {
+        adjustDate: "17 December 2015",
+        adjustDetail: "on site @true",
+        adjustStatus: "A"
+    }];
+
+    $scope.empData = [{
+        ID : "01",
+        Image : "",
+        FirstName : "Nuttakrittra",
+        LastName : "Phumsawai",
+        JobTitle : "Programmer",
+        OfficeAddress : "",
+        Tel : "0945506035",
+        Facebook : "/tingtang.th",
+        Line : "tingtang35",
+        Email : "tingtang35@gmail.com",
+        WorkTimes : "",
+        Request :  ""
+    }]
+
+
     // Chart.js
     $scope.dataSummary = [{
         value: 14,
@@ -67,64 +145,6 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         highlight: '#DDDDDD',
         label: 'Day'
     }];
-
-    $scope.chkIn = [{
-        chkInDate: "01 December 2015",
-        chkInTime: "09:02 AM",
-        chkOutTime: "07:28 PM"
-    }, {
-        chkInDate: "02 December 2015",
-        chkInTime: "08:44 AM",
-        chkOutTime: "07:59 PM"
-    }, {
-        chkInDate: "03 December 2015",
-        chkInTime: "08:24 AM",
-        chkOutTime: "07:38 PM"
-    }, {
-        chkInDate: "04 December 2015",
-        chkInTime: "09:362 AM",
-        chkOutTime: ""
-    }];
-
-    $scope.leaved = [{
-        leaveType: "Sick Leave",
-        leaveStartDate: "01 December 2015",
-        leaveDetail: "ท้องเสีย"
-    }, {
-        leaveType: "Personal Leave",
-        leaveStartDate: "24 December 2015",
-        leaveDetail: "ไปทำใบขับขี่"
-    }];
-
-    $scope.request = [{
-        leaveType: "Sick Leave",
-        leaveStartDate: "15 December 2015",
-        leaveDetail: "ไปพบแพทย์เพื่อ Follow Up",
-        leaveStatus: "A"
-    }, {
-        leaveType: "Personal Leave",
-        leaveStartDate: "24 December 2015",
-        leaveDetail: "ไปทำใบขับขี่",
-        leaveStatus: "W"
-    }, {
-        leaveType: "Personal Leave",
-        leaveStartDate: "28 December 2015",
-        leaveDetail: "ไปทำบัตรประชาชน",
-        leaveStatus: "W"
-    }];
-
-
-    $scope.adjust = [{
-        adjustDate: "07 December 2015",
-        adjustDetail: "ลืมโทรศัพท์ไว้ที่บ้าน",
-        adjustStatus: "R"
-    }, {
-        adjustDate: "17 December 2015",
-        adjustDetail: "on site @true",
-        adjustStatus: "A"
-    }];
-
-
 
 
     // Chart.js Options
