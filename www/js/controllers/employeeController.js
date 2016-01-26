@@ -27,14 +27,13 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
 
                     //For iOS
                     //window.plugins.socialsharing.share(null, null, imageLink, null)
-                    
+                    $location.path('/views/capture');
                     
                 }
             }, 'jpg', 50, 'myScreenShot');
 
-        }, 100);
-                $location.path('/views/capture');
-        
+        }, 300);
+
 
 
     }
@@ -46,7 +45,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     }
 
     // Chart.js
-    $scope.dataSummary = [{
+    $scope.data = [{
         value: 14,
         color: '#00DD00',
         highlight: '#00FF00',
@@ -62,65 +61,6 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         highlight: '#DDDDDD',
         label: 'Day'
     }];
-
-    $scope.chkIn = [{
-        chkInDate: "01 December 2015",
-        chkInTime: "09:02 AM",
-        chkOutTime: "07:28 PM"
-    },{
-        chkInDate: "02 December 2015",
-        chkInTime: "08:44 AM",
-        chkOutTime: "07:59 PM"
-    },{
-        chkInDate: "03 December 2015",
-        chkInTime: "08:24 AM",
-        chkOutTime: "07:38 PM"
-    },{
-        chkInDate: "04 December 2015",
-        chkInTime: "09:362 AM",
-        chkOutTime: ""
-    }];
-
-    $scope.leaved = [{
-        leaveType: "Sick Leave",
-        leaveStartDate: "01 December 2015",
-        leaveDetail: "ท้องเสีย"
-    },{
-        leaveType: "Personal Leave",
-        leaveStartDate: "24 December 2015",
-        leaveDetail: "ไปทำใบขับขี่"
-    }];
-
-    $scope.request = [{
-        leaveType: "Sick Leave",
-        leaveStartDate: "15 December 2015",
-        leaveDetail: "ไปพบแพทย์เพื่อ Follow Up",
-        leaveStatus: "A"
-    }, {
-        leaveType: "Personal Leave",
-        leaveStartDate: "24 December 2015",
-        leaveDetail: "ไปทำใบขับขี่",
-        leaveStatus: "W"
-    }, {
-        leaveType: "Personal Leave",
-        leaveStartDate: "28 December 2015",
-        leaveDetail: "ไปทำบัตรประชาชน",
-        leaveStatus: "W"
-    }];
-
-
-        $scope.adjust = [{
-        adjustDate: "07 December 2015",
-        adjustDetail: "ลืมโทรศัพท์ไว้ที่บ้าน",
-        adjustStatus: "R"
-    }, {
-        adjustDate: "17 December 2015",
-        adjustDetail: "on site @true",
-        adjustStatus: "A"
-    }];
-
-
-
 
     // Chart.js Options
     $scope.options = {
