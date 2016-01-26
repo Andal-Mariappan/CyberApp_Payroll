@@ -209,3 +209,12 @@ img {
         border-width: 1px;
     border-style: solid;
 }
+
+.scrollArea {
+  height: 300px;
+  width:100%;
+  overflow: auto;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
