@@ -112,7 +112,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         FirstName: "Nuttakrittra",
         LastName: "Phumsawai",
         JobTitle: "Programmer",
-        OfficeAddress: " Cyber Advance System And Network Co.,Ltd<br>ไซเบอร์แอดวานซ์ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด<br>169 / 50 อาคาร เอ็มที ออฟฟิต ปาร์ค ม.3 ถ.ลำลูกกา ต.ลำลูกกา<br>อ.ลำลูกกา จ.ปทุมธานี 12130 ",
+        OfficeAddress: " Cyber Advance System And Network Co.,Ltd<br>บริษัท ไซเบอร์ แอดวานซ์ ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด<br>55/7 ม.11 ถ.วงแหวนลำลูกกา ต.บึงคำพร้อย<br>อ.ลำลูกกา จ.ปทุมธานี 12150 ",
         Tel: "0945506035",
         Facebook: "/tingtang.th",
         Line: "tingtang35",
