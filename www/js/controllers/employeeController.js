@@ -11,7 +11,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     //         alert(error.data.message);
     //     })
     $scope.shareCard = function() {
-        $location.path('/views/captureShareCard');
+        
  
         $timeout(function() {
             var imageLink;
@@ -27,13 +27,14 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
 
                     //For iOS
                     //window.plugins.socialsharing.share(null, null, imageLink, null)
-                    $location.path('/views/capture');
+                    
                     
                 }
             }, 'jpg', 50, 'myScreenShot');
 
-        }, 300);
-
+        }, 100);
+                $location.path('/views/capture');
+        
 
 
     }
