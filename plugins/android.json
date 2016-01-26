@@ -7,10 +7,16 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.darktalker.cordova.screenshot": {
+            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
         "cordova-plugin-splashscreen": {
@@ -19,19 +25,10 @@
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
-        },
-        "com.darktalker.cordova.screenshot": {
-            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
-        },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
-        "cordova-plugin-geolocation": {
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         }
     },
