@@ -10,6 +10,7 @@
             <a nav-transition="none" href="#/views/captureShareCard"><i class="ion-android-share-alt" style="color: #FF9900; font-size: 40px;"></i></a>
         </div>
     </div>
+    <div ng-repeat="employeeData in empData">
     <div class="row">
         <div class="col col-20">
             <div id="employeeDetail">
@@ -18,7 +19,7 @@
         </div>
         <div class="col col-80 text-center">
             <h2 style="color: #FF9900;">{{employeeData.FirstName}} {{employeeData.LastName}}</h2>
-            <h4>Programmer</h4>
+            <h4>{{employeeData.JobTitle}}</h4>
         </div>
     </div>
     <div class="row">
@@ -73,5 +74,6 @@
         <div class="col col-80 ">
             <h4><b>{{employeeData.Email}}</b></h4>
         </div>
+    </div>
     </div>
 </ion-content>
