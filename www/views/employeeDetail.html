@@ -81,44 +81,40 @@
                 <div class="col col-10">
                 </div>
             </div>
-            <ion-scroll overflow-scroll="auto">
-                <div ng-show="var=='1'">
-                    <div class="list ">
-                        <a href="#" class="item item-icon-left " style="background-color: #EEEEEE;" ng-repeat="item in chkIn">
-                            <!--                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+            <div ng-show="var=='1'" class="scrollArea">
+                <div class="list ">
+                    <a href="#" class="item item-icon-left " style="background-color: #EEEEEE;" ng-repeat="item in chkIn">
+                        <!--                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
                         <h2 style="font-weight: bold;">01 December 2015</h2>
                         <div class="row">
                         <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i><p>09.00 AM</p>
                         <i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i><p>08.02 PM</p>
                         </div> -->
-                            <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                            <h2 style="font-weight: bold;">{{item.chkInDate}}</h2>
-                            <div class="row">
-                                <div class="col col-10 ">
-                                    <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i></div>
-                                <div class="col col-25">
-                                    <p>{{item.chkInTime}}</p>
-                                </div>
-                                <div class="col col-10"><i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i></div>
-                                <div class="col col-25">
-                                    <p>{{item.chkOutTime}}</p>
-                                </div>
+                        <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                        <h2 style="font-weight: bold;">{{item.chkInDate}}</h2>
+                        <div class="row">
+                            <div class="col col-10 ">
+                                <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i></div>
+                            <div class="col col-25">
+                                <p>{{item.chkInTime}}</p>
                             </div>
-                        </a>
-                    </div>
+                            <div class="col col-10"><i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i></div>
+                            <div class="col col-25">
+                                <p>{{item.chkOutTime}}</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </ion-scroll>
-            <ion-scroll>
-                <div ng-show="var=='2'">
-                    <div class="list">
-                        <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat=" item in leaved">
-                            <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                            <h2 style="font-weight: bold;">{{item.leaveType}} | {{item.leaveStartDate}}</h2>
-                            <p>{{item.leaveDetail}}</p>
-                        </a>
-                    </div>
+            </div>
+            <div ng-show="var=='2'" class="scrollArea">
+                <div class="list">
+                    <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat=" item in leaved">
+                        <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                        <h2 style="font-weight: bold;">{{item.leaveType}} | {{item.leaveStartDate}}</h2>
+                        <p>{{item.leaveDetail}}</p>
+                    </a>
                 </div>
-            </ion-scroll>
+            </div>
         </ion-tab>
         <ion-tab title="Settings" icon-on="icon ion-document" icon-off="icon ion-document">
             <!-- Tab 3 content -->
@@ -145,7 +141,7 @@
                 <div class="col col-10">
                 </div>
             </div>
-            <div ng-show="var=='1'">
+            <div ng-show="var=='1'" class="scrollArea">
                 <div class="list">
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat="item in request">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
@@ -155,7 +151,7 @@
                     </a>
                 </div>
             </div>
-            <div ng-show="var=='2'">
+            <div ng-show="var=='2'" class="scrollArea">
                 <div class="list">
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat="item in adjust">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
