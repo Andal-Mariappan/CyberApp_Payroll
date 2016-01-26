@@ -45,12 +45,13 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
 
                 $ionicLoading.hide();
                 $cordovaDialogs.beep(1);
-                
+
                 var lat = position.coords.latitude;
                 var lng = position.coords.longitude;
 
                 alert("Got position: " + lat + ", " + lng);
 
+                
                 $location.path('views/employeeDetail');
 
             }, function(err) {
