@@ -92,7 +92,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         leaveType: "Personal Leave",
         leaveStartDate: "28 December 2015",
         leaveDetail: "ไปทำบัตรประชาชน",
-        leaveStatus: "W"
+        leaveStatus: "R"
     }]
 
 

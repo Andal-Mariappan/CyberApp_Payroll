@@ -147,7 +147,7 @@
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
                         <h2 style="font-weight: bold;">{{item.leaveType}} | {{item.leaveStartDate}}</h2>
                         <p>{{item.leaveDetail}}</p>
-                        <span class="badgeleave badge-adjust"><p id="fontStatus">{{item.leaveStatus}}</p></span>
+                        <span class="badgeleave {{item.leaveStatus =='A' ? 'badge-adjust' : item.leaveStatus =='W' ? 'badge-wait' : 'badge-reject'}}"><p id="fontStatus">{{item.leaveStatus}}</p></span>
                     </a>
                 </div>
             </div>
@@ -157,7 +157,7 @@
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
                         <h2 style="font-weight: bold;">{{item.adjustDate}}</h2>
                         <p>{{item.adjustDetail}}</p>
-                        <span class="badgeleave badge-reject"><p id="fontStatus">{{item.adjustStatus}}</p></span>
+                        <span class="badgeleave {{item.adjustStatus =='A' ? 'badge-adjust' : item.adjustStatus =='W' ? 'badge-wait' : 'badge-reject'}}"><p id="fontStatus">{{item.adjustStatus}}</p></span>
                     </a>
                 </div>
             </div>
