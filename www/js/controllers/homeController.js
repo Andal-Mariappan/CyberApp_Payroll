@@ -1,6 +1,6 @@
 myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup, $cordovaGeolocation, $ionicLoading, $location) {
 
-
+    
         $scope.exitApp = function() {
 
             var confirmPopup = $ionicPopup.confirm({

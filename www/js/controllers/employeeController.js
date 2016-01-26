@@ -17,7 +17,6 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     //         alert(error.data.message);
     //     })
     $scope.shareCard = function() {
-        $route.reload();
         $timeout(function() {
             var imageLink;
             console.log('Calling from CapturePhoto');
@@ -121,7 +120,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
         WorkTimes: "",
         Request: ""
     }]
-    // $scope.officeAddress = $scope.empData.OfficeAddress
+
 
     // Chart.js
     $scope.dataSummary = [{
