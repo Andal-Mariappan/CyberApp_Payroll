@@ -1,21 +1,16 @@
+'use strict';
 myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSocialSharing', '$location', '$timeout', '$ionicLoading', function($scope, employeeService, $cordovaSocialSharing, $location, $timeout, $ionicLoading) {
 
 
+    $scope.employeeData = [];
+    employeeService.getEmployeeByEmail().then(function(results) {
+        //alert("Success");
+        $scope.employeeData = results.data;
 
+    }, function(error) {
+        alert(error.data.message);
+    });
 
-
-
-
-
-    // $scope.employeeData = [];
-
-    // employeeService.getEmployeeByEmail().then(function(results) {
-
-    //         $scope.employeeData = results.data;
-
-    //     }, function(error) {
-    //         alert(error.data.message);
-    //     })
     $scope.shareCard = function() {
         $timeout(function() {
             var imageLink;

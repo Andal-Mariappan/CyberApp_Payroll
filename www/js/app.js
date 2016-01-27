@@ -88,7 +88,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
 
 });
 
-var serviceBase = 'http://cyberweb.azurewebsites.net/';
+var serviceBase = 'http://localhost:5145/';
 myApp.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,
     clientId: 'ngAuthApp'
