@@ -1,6 +1,6 @@
-myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', '$cordovaDialogs', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup, $cordovaGeolocation, $ionicLoading, $location, $cordovaDialogs) {
+myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', '$cordovaDialogs', 'authService', 'checkInService', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup, $cordovaGeolocation, $ionicLoading, $location, $cordovaDialogs, authService, checkInService) {
 
-    
+
     // $scope.employeeData = [];
     // employeeService.getEmployeeByEmail().then(function(results) {
     //     //alert("Success");
@@ -9,7 +9,7 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
     // }, function(error) {
     //     alert(error.data.message);
     // });
-    
+
 
 
 
@@ -48,7 +48,8 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
             timeout: 10000,
             enableHighAccuracy: true
         };
-
+        var lat = "";
+        var lng = "";
         $ionicLoading.show();
 
         $cordovaGeolocation
@@ -56,15 +57,43 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
             .then(function(position) {
 
                 $ionicLoading.hide();
-                $cordovaDialogs.beep(1);
+                // $cordovaDialogs.beep(1);
 
-                var lat = position.coords.latitude;
-                var lng = position.coords.longitude;
+                lat = position.coords.latitude;
+                lng = position.coords.longitude;
 
-                alert("Got position: " + lat + ", " + lng);
+                //alert("Got position: " + lat + ", " + lng);
 
-                
-                $location.path('views/employeeDetail');
+
+                authService.login().then(function(response) {
+                        var chkInData = {
+                            Email: "",
+                            Location: lat + "," + lng,
+                        };
+                        checkInService.checkIn(chkInData).then(function(response) {
+
+                        }, function(response) {
+                            var errors = [];
+                            for (var key in response.data.ModelState) {
+                                for (var i = 0; i < response.data.ModelState[key].length; i++) {
+                                    errors.push(response.data.ModelState[key][i]);
+                                }
+                            }
+                            $scope.message = "Failed to register user due to:" + errors.join(' ');
+                        });
+
+                    },
+                    function(response) {
+                        var errors = [];
+                        for (var key in response.data.ModelState) {
+                            for (var i = 0; i < response.data.ModelState[key].length; i++) {
+                                errors.push(response.data.ModelState[key][i]);
+                            }
+                        }
+                        $scope.message = "Failed to register user due to:" + errors.join(' ');
+                    });
+
+                // $location.path('views/employeeDetail');
 
             }, function(err) {
 
@@ -79,6 +108,8 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
                     alert(error.message);
                 }
             });
+
+
     }
 
 

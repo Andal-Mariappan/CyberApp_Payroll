@@ -5,14 +5,22 @@ myApp.factory('deviceAuthService', ['$http', 'ngAuthSettings', 'localStorageServ
 
     var deviceAuthServiceFactory = {};
 
-    var _getDeviceAuthService = function(deviceID,platforms) {
+    var _getDeviceAuthService = function(deviceID, platforms) {
         // var authData = localStorageService.get('authorizationData');
         // if (authData) {
 
         // }
         // + authData.userName
-        localStorageService.set('deviceData', { DeviceID : deviceID,Platforms : platforms});
+        localStorageService.set('deviceData', {
+            DeviceID: deviceID,
+            Platforms: platforms
+        });
         return $http.get(serviceBase + 'api/User/' + deviceID).then(function(results) {
+            localStorageService.set('deviceData', {
+                DeviceID: deviceID,
+                Platforms: platforms,
+                Email: results.data.Email
+            });
             return results;
         });
     };
@@ -23,7 +31,15 @@ myApp.factory('deviceAuthService', ['$http', 'ngAuthSettings', 'localStorageServ
 
         // }
         // + authData.userName
-        
+
+        var deviceData = localStorageService.get('deviceData');
+        deviceData.Email = data.email;
+
+        data.DeviceID = deviceData.DeviceID;
+        data.Platform = deviceData.Platforms;
+
+        localStorageService.set('deviceData', deviceData);
+
 
         return $http.post(serviceBase + 'api/User/', data).then(function(results) {
             return results;
