@@ -34,30 +34,27 @@
         <div class="col">
             <div class="item item-input-inset" style="background-color: #EEEEEE; border-style: none;">
                 <label class="item-input-wrapper">
-                    <input type="text" placeholder="DD/MM/YYYY" style="background-color: #fff; width:100px">&nbsp;&nbsp;<i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
+                    <input id="toDate" data-format="dd/MM/yyyy" type="date" style="background-color: #fff; width:136px">&nbsp;<i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
                 </label>
             </div>
         </div>
         <div class="col">
             <div class="item item-input-inset" style="background-color: #EEEEEE; border-style: none;">
                 <label class="item-input-wrapper">
-                    <input type="text" placeholder="DD/MM/YYYY" style="background-color: #fff; width:100px"> &nbsp;&nbsp;
-                    <i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
+                    <input id="fromDate" data-format="dd/MM/yyyy" type="date" style="background-color: #fff; width:136px">&nbsp;<i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
                 </label>
             </div>
         </div>
     </div>
     <hr>
 
-
-    
     <div class="row">
         <div class="col text-left">
             <p style="font-size: 120%; font-weight: bold;">จำนวน</p>
         </div>
         <div class="col text-center">
             <label class="item-input-wrapper">
-                <input type="text" placeholder="31" style="background-color: #fff; text-align:center;">
+                <input type="text" placeholder="{{dayDifference}}" style="background-color: #fff; text-align:center;">
             </label>
         </div>
         <div class="col text-right">
@@ -82,7 +79,7 @@
         </div>
         <div class="col text-center">
             <label class="item-input-wrapper">
-                <input type="text" placeholder="2" style="background-color: #fff; text-align:center;">
+                <input type="text" placeholder="0" style="background-color: #fff; text-align:center;">
             </label>
         </div>
         <div class="col text-right">

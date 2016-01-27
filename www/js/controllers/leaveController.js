@@ -1,4 +1,4 @@
-myApp.controller('leaveController', ['$scope', 'leaveService', function($scope, leaveService) {
+myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', function($scope, leaveService, $cordovaCalendar) {
 
     $scope.data = {
         active: false
@@ -6,9 +6,25 @@ myApp.controller('leaveController', ['$scope', 'leaveService', function($scope, 
     $scope.toggle = function() {
         $scope.data.active = !$scope.data.active;
     };
+    $scope.dayDiff = function(toDate, fromDate) {
+
+        $scope.dayDifference = parseInt(Math.round((fromDate - toDate) / (1000 * 60 * 60 * 24)));;
+    }
+    // $scope.dateDiff = function() {
+        
+    //     var dayNumber = (1000 * 60 * 60 * 24);
+
+    //     return function(toDate, fromDate) {
+    //         if (toDate && fromDate) {
+    //             var dayDiff = Math.floor((toDate - fromDate) / dayNumber);
+    //             if (angular.isNumber(dayDiff)) {
+    //                 $scope.dayDiff =  $scope.dayDiff + 1;
+    //             }
+    //         }
+    //     };
+    // };
 
 
-   
     $scope.createLeavesData = [];
     $scope.updateLeavesData = [];
     $scope.approveLeavesData = [];

@@ -211,7 +211,12 @@ input[type="radio"] {
 }
 
 .scrollArea {
-  height: 300px;
+  height: 291px;
+  width:100%;
+  overflow: auto;
+}
+.scrollAreas {
+  height: 462px;
   width:100%;
   overflow: auto;
 }
