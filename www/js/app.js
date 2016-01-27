@@ -81,6 +81,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
 
 
     $urlRouterProvider.otherwise('/views/intro');
+    //===================================================
     $ionicConfigProvider.views.transition('none');
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.tabs.style('standard');
