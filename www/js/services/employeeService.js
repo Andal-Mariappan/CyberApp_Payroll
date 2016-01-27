@@ -6,14 +6,14 @@ myApp.factory('employeeService', ['$http', 'ngAuthSettings', 'localStorageServic
     var employeeServiceFactory = {};
 
     var _getEmployeeByEmail = function() {
-        var authData = localStorageService.get('authorizationData');
-        if (authData) {
-            return $http.get(serviceBase + 'api/Employee?Email=sarayut.kungsaranuwat@gmail.com').then(function(results) {
+        // var authData = localStorageService.get('authorizationData');
+        // if (authData) {
+           
+        // }
+        // + authData.userName
+        return $http.get(serviceBase + 'api/Employee?Email=sarayut.kungsaranuwat@gmail.com').then(function(results) {
                 return results;
             });
-        }
-        // + authData.userName
-
     };
 
     employeeServiceFactory.getEmployeeByEmail = _getEmployeeByEmail;
@@ -21,3 +21,4 @@ myApp.factory('employeeService', ['$http', 'ngAuthSettings', 'localStorageServic
     return employeeServiceFactory;
 
 }]);
+

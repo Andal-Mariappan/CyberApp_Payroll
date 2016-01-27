@@ -81,13 +81,14 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
 
 
     $urlRouterProvider.otherwise('/views/intro');
+    //===================================================
     $ionicConfigProvider.views.transition('none');
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.tabs.style('standard');
 
 });
 
-var serviceBase = 'http://cyberweb.azurewebsites.net/';
+var serviceBase = 'http://cyberwebapi.azurewebsites.net/';
 myApp.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,
     clientId: 'ngAuthApp'

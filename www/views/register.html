@@ -1,8 +1,6 @@
 <ion-content>
-    <div class="row row-bottom ">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col text-right"><a href="#/views/home"><i class="ion-android-cancel iconsExit"></i></a></div>
+    <div class="col text-right">
+        <button class="button-icon ion-android-cancel iconsExit" ng-click="exitApp()"></button>
     </div>
     <br>
     <div class="text-center">
@@ -15,6 +13,12 @@
                 <label class="item item-input  login-focus">
                     <input type="email" placeholder="E-mail" ng-model="registration.email" required>
                 </label>
+                <!--                 <label class="item item-input  login-focus">
+                    <input type="email" placeholder="password" ng-model="registration.password" >
+                </label>
+                <label class="item item-input  login-focus">
+                    <input type="email" placeholder="confirmPassword" ng-model="registration.confirmPassword" >
+                </label> -->
             </div>
         </div>
         <div class="col col-10"></div>

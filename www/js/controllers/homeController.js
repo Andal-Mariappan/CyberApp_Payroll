@@ -1,5 +1,17 @@
 myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', '$cordovaDialogs', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup, $cordovaGeolocation, $ionicLoading, $location, $cordovaDialogs) {
 
+    
+    // $scope.employeeData = [];
+    // employeeService.getEmployeeByEmail().then(function(results) {
+    //     //alert("Success");
+    //     $scope.employeeData = results.data;
+
+    // }, function(error) {
+    //     alert(error.data.message);
+    // });
+    
+
+
 
     $scope.exitApp = function() {
 
