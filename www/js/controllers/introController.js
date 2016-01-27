@@ -1,4 +1,6 @@
-myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordovaDevice', function($scope, $timeout, $location, $cordovaDevice) {
+'use strict';
+myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordovaDevice', 'deviceAuthService', function($scope, $timeout, $location, $cordovaDevice, deviceAuthService) {
+
 
 
 
@@ -6,13 +8,31 @@ myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordov
 
         $scope.platforms = $cordovaDevice.getPlatform();
         $scope.device = $cordovaDevice.getUUID();
+        deviceAuthService.getDeviceAuthService($scope.device, $scope.platforms).then(function(results) {
 
+            if (results.data) {
+                $location.path('/views/home');
+
+            } else {
+                $location.path('/views/register');
+
+            }
+
+        }, function(error) {
+            alert(error.data.message);
+        });
     }, false);
 
 
-    $timeout(function() {
-        $location.path('/views/home');
-    }, 3000);
+
+
+
+
+
+
+
+
+
 
 
 

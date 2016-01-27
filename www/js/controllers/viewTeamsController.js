@@ -50,7 +50,7 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
         });
         marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
 
-        google.maps.event.addListener(marker, 'click', function() {
+        google.maps.event.addListener(marker, 'mousedown', function() {
             infoWindow.setContent( marker.title  + marker.content);
             infoWindow.open($scope.map, marker);
         });
