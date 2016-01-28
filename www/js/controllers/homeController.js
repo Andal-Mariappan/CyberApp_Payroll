@@ -56,7 +56,7 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
             .getCurrentPosition(posOptions)
             .then(function(position) {
 
-                $ionicLoading.hide();
+
                 // $cordovaDialogs.beep(1);
 
                 lat = position.coords.latitude;
@@ -68,10 +68,11 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
                 authService.login().then(function(response) {
                         var chkInData = {
                             Email: "",
-                            Location: lat + "," + lng,
+                            LocationIn: lat + "," + lng,
                         };
                         checkInService.checkIn(chkInData).then(function(response) {
-
+                            $ionicLoading.hide();
+                            $location.path("/views/employeeDetail");
                         }, function(response) {
                             var errors = [];
                             for (var key in response.data.ModelState) {
@@ -81,6 +82,7 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
                             }
                             $scope.message = "Failed to register user due to:" + errors.join(' ');
                         });
+                       
 
                     },
                     function(response) {
