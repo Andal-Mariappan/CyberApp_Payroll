@@ -204,31 +204,45 @@ input[type="radio"] {
     margin-left: 10px;
     margin-top: 5px;
 }
-.itemList
-{
-        border-width: 1px;
+
+.itemList {
+    border-width: 1px;
     border-style: solid;
 }
 
 .scrollArea {
-  height: 291px;
-  width:100%;
-  overflow: auto;
-}
-.scrollAreas {
-  height: 462px;
-  width:100%;
-  overflow: auto;
-}
-::-webkit-scrollbar { 
-    display: none; 
+    height: 291px;
+    width: 100%;
+    overflow: auto;
 }
 
-.map{
+.scrollAreas {
+    height: 462px;
+    width: 100%;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.map {
     text-align: -webkit-center;
 }
+
 .infoWindowContent {
-    font-size:  14px !important;
+    font-size: 14px !important;
     border-top: 1px solid #ccc;
     padding-top: 10px;
+}
+.labels {
+    -webkit-user-drag: none;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    background-image: url("../img/simson.png");
+    
 }
