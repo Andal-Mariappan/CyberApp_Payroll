@@ -14,7 +14,7 @@ myApp.factory('employeeService', ['$http', 'ngAuthSettings', 'localStorageServic
         var deviceData = localStorageService.get('deviceData');
         var Email = deviceData.Email;
 
-        return $http.get(serviceBase + 'api/Employee?Email=' + Email).then(function(results) {
+        return $http.get(serviceBase + 'api/EmployeeProfile?Email=' + Email).then(function(results) {
             return results;
         });
     };

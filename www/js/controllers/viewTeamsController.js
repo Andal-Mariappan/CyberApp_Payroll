@@ -8,6 +8,7 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
         lat: 13.9338700,
         long: 100.7179009
     }, {
+
         img: 'img/simson.png',
         FirstName: 'Sarayut2',
         LastName: 'Kungsaranuwat2',
@@ -31,6 +32,7 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
         LastName: 'Kungsaranuwat5',
         lat: 13.9345659,
         long: 100.7155331
+
     }];
 
     var mapOptions = {
@@ -61,6 +63,7 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
         pictureLabel.height=40;
         var marker = new MarkerWithLabel({
             position: new google.maps.LatLng(info.lat, info.long),
+
             map: $scope.map,
             icon:null,
             title: info.FirstName + " " + info.LastName,
