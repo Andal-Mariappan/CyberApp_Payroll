@@ -26,7 +26,7 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
         lat: 13.9290659,
         long: 100.7180381
     }, {
-        img: 'img/simson.png',
+        img: 'https://scontent.fbkk2-1.fna.fbcdn.net/hprofile-xpa1/v/t1.0-1/p50x50/12347757_10206676548065814_2098605460348825831_n.jpg?_nc_ad=z-m&oh=c0441b0bca9468d66be86358a14a362f&oe=573DA29D',
         FirstName: 'Sarayut5',
         LastName: 'Kungsaranuwat5',
         lat: 13.9345659,
@@ -57,6 +57,8 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
 
         var pictureLabel = document.createElement("img");
         pictureLabel.src = info.img;
+        pictureLabel.width = 40;
+        pictureLabel.height=40;
         var marker = new MarkerWithLabel({
             position: new google.maps.LatLng(info.lat, info.long),
             map: $scope.map,
@@ -64,7 +66,7 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
             title: info.FirstName + " " + info.LastName,
             draggable: true,
             raiseOnDrag: true,
-            //labelContent: pictureLabel,
+            labelContent: pictureLabel,
             labelAnchor: new google.maps.Point(20, 50),
             labelClass: "labels", // the CSS class for the label
             labelStyle: {
