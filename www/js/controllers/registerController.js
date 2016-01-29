@@ -32,14 +32,18 @@ myApp.controller('registerController', ['$scope', '$location', '$timeout', 'auth
                     },
                     function(response) {
                         var errors = [];
-                        for (var key in response.data.ModelState) {
-                            for (var i = 0; i < response.data.ModelState[key].length; i++) {
-                                errors.push(response.data.ModelState[key][i]);
+                        if (response.data.ModelState) {
+                            for (var key in response.data.ModelState) {
+                                for (var i = 0; i < response.data.ModelState[key].length; i++) {
+                                    errors.push(response.data.ModelState[key][i]);
+                                }
                             }
+                        } else {
+                            errors.push(response.data.Message);
                         }
                         $scope.message = "Failed to register user due to:" + errors.join(' ');
                     });
-                
+
             },
             function(response) {
                 var errors = [];
@@ -49,8 +53,7 @@ myApp.controller('registerController', ['$scope', '$location', '$timeout', 'auth
                             errors.push(response.data.ModelState[key][i]);
                         }
                     }
-                }
-                else{
+                } else {
                     errors.push(response.data.Message);
                 }
 

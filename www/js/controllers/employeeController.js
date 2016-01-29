@@ -1,5 +1,9 @@
 'use strict';
-myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSocialSharing', '$location', '$timeout', '$ionicLoading', function($scope, employeeService, $cordovaSocialSharing, $location, $timeout, $ionicLoading) {
+myApp.controller('employeeController'
+    , ['$scope', 'employeeService', '$cordovaSocialSharing', '$location', '$timeout', 
+    '$ionicLoading', 
+    function($scope, employeeService, $cordovaSocialSharing, $location, $timeout, 
+        $ionicLoading) {
 
 
     $scope.employeeData = [];
