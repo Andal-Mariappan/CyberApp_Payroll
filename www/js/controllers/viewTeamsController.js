@@ -57,6 +57,8 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
 
         var pictureLabel = document.createElement("img");
         pictureLabel.src = info.img;
+        pictureLabel.width = 40;
+        pictureLabel.height=40;
         var marker = new MarkerWithLabel({
             position: new google.maps.LatLng(info.lat, info.long),
             map: $scope.map,
@@ -64,7 +66,7 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
             title: info.FirstName + " " + info.LastName,
             draggable: true,
             raiseOnDrag: true,
-            //labelContent: pictureLabel,
+            labelContent: pictureLabel,
             labelAnchor: new google.maps.Point(20, 50),
             labelClass: "labels", // the CSS class for the label
             labelStyle: {
