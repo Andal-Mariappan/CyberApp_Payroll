@@ -3,7 +3,7 @@ myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordov
 
 
     $scope.platforms = "Android";
-    $scope.device = "60a40bb7e2972605";
+    $scope.device = "60a40bb7e2972607";
 
     document.addEventListener("deviceready", function() {
 
