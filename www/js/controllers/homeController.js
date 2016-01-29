@@ -1,7 +1,7 @@
 myApp.controller('homeController', 
     ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', 
     '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', '$cordovaDialogs', 
-    'authService', 'checkInService', 
+    'authService', 'checkInService','employeeService', 
     function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, 
         $ionicPopup, $cordovaGeolocation, $ionicLoading, $location, $cordovaDialogs, 
         authService, checkInService) {

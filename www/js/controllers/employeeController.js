@@ -111,7 +111,7 @@ myApp.controller('employeeController'
         FirstName: "Nuttakrittra",
         LastName: "Phumsawai",
         JobTitle: "Programmer",
-        OfficeAddress: " Cyber Advance System And Network Co.,Ltd<br>บริษัท ไซเบอร์ แอดวานซ์ ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด<br>55/7 ม.11 ถ.วงแหวนลำลูกกา ต.บึงคำพร้อย<br>อ.ลำลูกกา จ.ปทุมธานี 12150 ",
+        OfficeAddress: "Cyber Advance System And Network Co.,Ltd<br>บริษัท ไซเบอร์ แอดวานซ์ ซิสเต็ม แอนด์ เน็ตเวิร์ก จำกัด<br>55/7 ม.11 ถ.วงแหวนลำลูกกา ต.บึงคำพร้อย<br>อ.ลำลูกกา จ.ปทุมธานี 12150 ",
         Tel: "0945506035",
         Facebook: "/tingtang.th",
         Line: "tingtang35",
@@ -125,17 +125,14 @@ myApp.controller('employeeController'
     $scope.dataSummary = [{
         value: 14,
         color: '#00DD00',
-        highlight: '#00FF00',
         label: 'Work'
     }, {
         value: 3,
         color: '#FF9900',
-        highlight: '#FF9900',
         label: 'Leave'
     }, {
         value: 13,
         color: '#BBBBBB',
-        highlight: '#DDDDDD',
         label: 'Day'
     }];
 
