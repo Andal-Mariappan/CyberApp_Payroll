@@ -8,25 +8,23 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
         lat: 13.9338700,
         long: 100.7179009
     }, {
-        city: 'New York',
-        desc: 'This city is aiiiiite!',
-        lat: 13.9339000,
+        img : 'img/simson.png',
+        FirstName: 'Nuttakrittra',
+        LastName: 'Kungsaranuwat',
+        lat: 13.9349000,
         long: 100.7180000
     }, {
-        city: 'Chicago',
-        desc: 'This is the second best city in the world!',
+        img : 'img/simson.png',
+        FirstName: 'Jakkrich',
+        LastName: 'Jong',
         lat: 13.9400053,
         long: 100.7211000
     }, {
-        city: 'Los Angeles',
-        desc: 'This city is live!',
+        img : 'img/simson.png',
+        FirstName: 'Theerasak',
+        LastName: 'Tubrit',
         lat: 13.9290659,
         long: 100.7180381
-    }, {
-        city: 'Las Vegas',
-        desc: 'Sin City...\'nuff said!',
-        lat: 13.9345659,
-        long: 100.7155331
     }];
 
     var mapOptions = {
@@ -46,7 +44,7 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
         var marker = new google.maps.Marker({
             map: $scope.map,
             position: new google.maps.LatLng(info.lat, info.long),
-            title: info.FirstName
+            title: info.FirstName + " " + info.LastName
         });
         marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
 
