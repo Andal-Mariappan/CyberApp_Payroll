@@ -27,8 +27,8 @@ myApp.controller('registerController', ['$scope', '$location', '$timeout', 'auth
 
                         $scope.savedSuccessfully = true;
                         $scope.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
-                        // startTimer();
-                        $location.path('/views/home');
+                        startTimer();
+                        
                     },
                     function(response) {
                         var errors = [];
@@ -53,12 +53,12 @@ myApp.controller('registerController', ['$scope', '$location', '$timeout', 'auth
 
     };
 
-    // var startTimer = function() {
-    //     var timer = $timeout(function() {
-    //         $timeout.cancel(timer);
-    //         $location.path('/login');
-    //     }, 2000);
-    // }
+    var startTimer = function() {
+        var timer = $timeout(function() {
+            $timeout.cancel(timer);
+            $location.path('/views/home');
+        }, 2000);
+    }
 
     $scope.exitApp = function() {
 
