@@ -47,12 +47,31 @@ myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', functi
     var createMarker = function(info) {
 
 
-        var marker = new google.maps.Marker({
-            map: $scope.map,
+        // var icon = info.img;
+        // var marker = new google.maps.Marker({
+        //     map: $scope.map,
+        //     position: new google.maps.LatLng(info.lat, info.long),
+        //     icon: icon,
+        //     title: info.FirstName + " " + info.LastName
+        // });
+
+        var pictureLabel = document.createElement("img");
+        pictureLabel.src = info.img;
+        var marker = new MarkerWithLabel({
             position: new google.maps.LatLng(info.lat, info.long),
-            title: info.FirstName + " " + info.LastName
+            map: $scope.map,
+            icon:null,
+            title: info.FirstName + " " + info.LastName,
+            draggable: true,
+            raiseOnDrag: true,
+            //labelContent: pictureLabel,
+            labelAnchor: new google.maps.Point(20, 50),
+            labelClass: "labels", // the CSS class for the label
+            labelStyle: {
+                opacity: 0.90
+            }
         });
-        
+
 
         google.maps.event.addListener(marker, 'mousedown', function() {
             infoWindow.setContent(marker.title);
