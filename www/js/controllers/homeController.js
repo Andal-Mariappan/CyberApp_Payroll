@@ -1,4 +1,10 @@
-myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', '$cordovaDialogs', 'authService', 'checkInService', function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, $ionicPopup, $cordovaGeolocation, $ionicLoading, $location, $cordovaDialogs, authService, checkInService) {
+myApp.controller('homeController', 
+    ['$scope', 'employeeService', '$interval', '$filter', '$ionicSideMenuDelegate', 
+    '$ionicPopup', '$cordovaGeolocation', '$ionicLoading', '$location', '$cordovaDialogs', 
+    'authService', 'checkInService', 
+    function($scope, employeeService, $interval, $filter, $ionicSideMenuDelegate, 
+        $ionicPopup, $cordovaGeolocation, $ionicLoading, $location, $cordovaDialogs, 
+        authService, checkInService) {
 
 
     // $scope.employeeData = [];
@@ -56,8 +62,8 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
             .getCurrentPosition(posOptions)
             .then(function(position) {
 
-                $ionicLoading.hide();
-                // $cordovaDialogs.beep(1);
+
+
 
                 lat = position.coords.latitude;
                 lng = position.coords.longitude;
@@ -68,27 +74,38 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
                 authService.login().then(function(response) {
                         var chkInData = {
                             Email: "",
-                            Location: lat + "," + lng,
+                            LocationIn: lat + "," + lng,
                         };
                         checkInService.checkIn(chkInData).then(function(response) {
-
+                            //$cordovaDialogs.beep(1);
+                            $ionicLoading.hide();
+                            $location.path("/views/employeeDetail");
                         }, function(response) {
                             var errors = [];
+                            if (response.data.ModelState) {
+                                for (var key in response.data.ModelState) {
+                                    for (var i = 0; i < response.data.ModelState[key].length; i++) {
+                                        errors.push(response.data.ModelState[key][i]);
+                                    }
+                                }
+                            } else {
+                                errors.push(response.data.Message);
+                            }
+                            $scope.message = "Failed to register user due to:" + errors.join(' ');
+                        });
+
+
+                    },
+                    function(response) {
+                        var errors = [];
+                        if (response.data.ModelState) {
                             for (var key in response.data.ModelState) {
                                 for (var i = 0; i < response.data.ModelState[key].length; i++) {
                                     errors.push(response.data.ModelState[key][i]);
                                 }
                             }
-                            $scope.message = "Failed to register user due to:" + errors.join(' ');
-                        });
-
-                    },
-                    function(response) {
-                        var errors = [];
-                        for (var key in response.data.ModelState) {
-                            for (var i = 0; i < response.data.ModelState[key].length; i++) {
-                                errors.push(response.data.ModelState[key][i]);
-                            }
+                        } else {
+                            errors.push(response.data.Message);
                         }
                         $scope.message = "Failed to register user due to:" + errors.join(' ');
                     });

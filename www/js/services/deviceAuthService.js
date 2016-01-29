@@ -15,13 +15,19 @@ myApp.factory('deviceAuthService', ['$http', 'ngAuthSettings', 'localStorageServ
             DeviceID: deviceID,
             Platforms: platforms
         });
+
         return $http.get(serviceBase + 'api/User/' + deviceID).then(function(results) {
-            localStorageService.set('deviceData', {
-                DeviceID: deviceID,
-                Platforms: platforms,
-                Email: results.data.Email
-            });
+            if (results.data) {
+                localStorageService.set('deviceData', {
+                    DeviceID: deviceID,
+                    Platforms: platforms,
+                    Email: results.data.Email
+                });
+            }
+
             return results;
+
+
         });
     };
 
@@ -33,8 +39,8 @@ myApp.factory('deviceAuthService', ['$http', 'ngAuthSettings', 'localStorageServ
         // + authData.userName
 
         var deviceData = localStorageService.get('deviceData');
-        deviceData.Email = data.email;
 
+        deviceData.Email = data.email;
         data.DeviceID = deviceData.DeviceID;
         data.Platform = deviceData.Platforms;
 

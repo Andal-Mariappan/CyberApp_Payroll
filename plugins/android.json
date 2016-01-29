@@ -10,10 +10,16 @@
         "com.darktalker.cordova.screenshot": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
+        },
+        "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
         "cordova-plugin-geolocation": {
@@ -31,10 +37,7 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
-        },
-        "cordova-plugin-calendar": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         }
     },

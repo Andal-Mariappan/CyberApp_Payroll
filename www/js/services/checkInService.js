@@ -14,9 +14,29 @@ myApp.factory('checkInService', ['$http', 'ngAuthSettings', 'localStorageService
         var deviceData = localStorageService.get('deviceData');
         data.Email = deviceData.Email;
 
-        return $http.post(serviceBase + 'api/CheckIn/', data).then(function(results) {
-            return results;
+        return $http.get(serviceBase + 'api/CheckIn?email=' + data.Email).then(function(results) {
+
+
+            if (!results.data) {
+                //checkin
+                return $http.post(serviceBase + 'api/CheckIn/', data).then(function(results) {
+                    return results;
+                });
+            } else {
+                //checkout
+                results.data.LocationOut = data.LocationIn;
+                return $http.put(serviceBase + 'api/CheckIn/' + results.data.ID, results.data).then(function(results) {
+                    return results;
+                });
+            }
+
+
+
         });
+
+
+
+
     };
 
     checkInServiceFactory.checkIn = _checkIn;
