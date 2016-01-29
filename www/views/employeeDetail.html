@@ -83,7 +83,7 @@
             </div>
             <div ng-show="var=='1'" class="scrollArea">
                 <div class="list ">
-                    <a href="#" class="item item-icon-left " style="background-color: #EEEEEE;" ng-repeat="item in CheckIn | orderBy:'-chkInDate'">
+                    <a href="#" class="item item-icon-left " style="background-color: #EEEEEE;" ng-repeat="item in CheckIn | orderBy:'-DateTimeIn'">
                         <!--                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
                         <h2 style="font-weight: bold;">01 December 2015</h2>
                         <div class="row">
@@ -91,6 +91,7 @@
                         <i class="ion-android-arrow-dropleft-circle" style="color: red; font-size: 20px;"></i><p>08.02 PM</p>
                         </div> -->
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
+                        <h2 style="font-weight: bold;">{{item.DateTimeIn | date:'dd MMMM yyyy'}}</h2>
                         <div class="row">
                             <div class="col col-10 ">
                                 <i class="ion-android-arrow-dropright-circle" style="color: green; font-size: 20px;"></i></div>
