@@ -1,9 +1,11 @@
 'use strict';
-myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordovaDevice', 'deviceAuthService', function($scope, $timeout, $location, $cordovaDevice, deviceAuthService) {
+myApp.controller('introController', 
+    ['$scope', '$timeout', '$location', '$cordovaDevice', 'deviceAuthService', 
+    function($scope, $timeout, $location, $cordovaDevice, deviceAuthService) {
 
 
     $scope.platforms = "Android";
-    $scope.device = "60a40bb7e2972605";
+    $scope.device = "60a40bb7e2972607";
 
     document.addEventListener("deviceready", function() {
 
@@ -43,17 +45,21 @@ myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordov
             $location.path('/views/home');
 
         } else {
-           
+
             $location.path('/views/register');
 
         }
 
     }, function(response) {
         var errors = [];
-        for (var key in response.data.Message) {
-            for (var i = 0; i < response.data.Message[key].length; i++) {
-                errors.push(response.data.Message[key][i]);
+        if (response.data.ModelState) {
+            for (var key in response.data.ModelState) {
+                for (var i = 0; i < response.data.ModelState[key].length; i++) {
+                    errors.push(response.data.ModelState[key][i]);
+                }
             }
+        } else {
+            errors.push(response.data.Message);
         }
         var message = "Failed to register user due to:" + errors.join(' ');
         alert(message);
