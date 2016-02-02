@@ -96,9 +96,9 @@ input[type="radio"] {
 }
 
 .radio-label {
-    margin-top: 3px;
+    margin-top: 5px;
     margin-left: 0px;
-    position: fixed;
+    position: absolute;
 }
 
 
@@ -235,6 +235,7 @@ input[type="radio"] {
     border-top: 1px solid #ccc;
     padding-top: 10px;
 }
+
 .labels {
     -webkit-user-drag: none;
     border-radius: 50%;
@@ -244,5 +245,13 @@ input[type="radio"] {
     height: 40px;
     width: 40px;
     /*background-image: url("../img/simson.png");*/
-    
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.typeDate {
+    margin-left: -10px;
 }

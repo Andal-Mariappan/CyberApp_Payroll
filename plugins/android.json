@@ -39,6 +39,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         }
     },
     "dependent_plugins": {}

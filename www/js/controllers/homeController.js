@@ -77,7 +77,7 @@ myApp.controller('homeController',
                             LocationIn: lat + "," + lng,
                         };
                         checkInService.checkIn(chkInData).then(function(response) {
-                            //$cordovaDialogs.beep(1);
+                            $cordovaDialogs.beep(1);
                             $ionicLoading.hide();
                             $location.path("/views/employeeDetail");
                         }, function(response) {

@@ -3,12 +3,12 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     '$ionicLoading',
     function($scope, employeeService, $cordovaSocialSharing, $location, $timeout,
         $ionicLoading) {
-
+        
         $scope.employeeData = [];
         employeeService.getEmployeeByEmail().then(function(results) {
             //alert("Success");
             var employeeProfile = results.data;
-            $scope.employeeData = employeeProfile.EmployeeData;
+            $scope.employeeData = employeeProfile.EmployeeData; 
             $scope.currentChkIn = employeeProfile.CurrentChkIn;
             $scope.CheckIn = employeeProfile.CheckIn;
 

@@ -1,17 +1,24 @@
-myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', function($scope, leaveService, $cordovaCalendar) {
+myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter', function($scope, leaveService, $cordovaCalendar, $filter) {
 
     $scope.data = {
         active: false
-    };
+    }
     $scope.toggle = function() {
         $scope.data.active = !$scope.data.active;
-    };
-    $scope.dayDiff = function(toDate, fromDate) {
+    }
+    
+    $scope.send = function(startDate, endDate) {
+        resDate = endDate - startDate;
+        resDate = $filter('date')(new Date(), 'd');
+    }
+    $scope.test = function(toDate, fromDate) {
 
         $scope.dayDifference = parseInt(Math.round((fromDate - toDate) / (1000 * 60 * 60 * 24)));;
     }
+
+
     // $scope.dateDiff = function() {
-        
+
     //     var dayNumber = (1000 * 60 * 60 * 24);
 
     //     return function(toDate, fromDate) {

@@ -33,6 +33,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
             controller: 'homeController'
         })
         .state('employeeDetail', {
+            cache: false,
             url: '/views/employeeDetail',
             templateUrl: 'views/employeeDetail.html',
             controller: 'employeeController'

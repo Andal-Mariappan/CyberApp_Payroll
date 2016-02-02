@@ -9,20 +9,18 @@
     </br>
     <div class="row">
         <div class="col col-33">
-            <input type="radio" id="radio01" checked="checked"  style="font-size: 100%;border-style: none; text-align:center; ">
-
+            <input type="radio" name="leave" value="1" checked>
             <label class="radio-label">Sick Leave</label>
         </div>
         <div class="col col-33">
-            <input type="radio" id="radio02" style="font-size: 100%;border-style: none; text-align:center; ">
+            <input type="radio" name="leave" value="2">
             <label class="radio-label">Personal Leave</label>
         </div>
         <div class="col col-33">
-            <input type="radio" id="radio03" style="font-size: 100%;border-style: none; text-align:center; ">
+            <input type="radio" name="leave" value="3">
             <label class="radio-label">Annual Leave</label>
         </div>
     </div>
-    
     <hr>
     <div class="row row-bottom ">
         <div class="col text-left">
@@ -31,33 +29,32 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col col-50">
             <div class="item item-input-inset" style="background-color: #EEEEEE; border-style: none;">
-                <label class="item-input-wrapper">
-                    <input id="toDate" data-format="dd/MM/yyyy" type="date" style="background-color: #fff; width:136px">&nbsp;<i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
+                <label class="item-input-wrapper typeDate">
+                    <input data-format="dd/MM/yyyy" type="date" style="background-color: #fff; width:136px" ng-model="startDate">&nbsp;<i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
                 </label>
             </div>
         </div>
-        <div class="col">
+        <div class="col col-50">
             <div class="item item-input-inset" style="background-color: #EEEEEE; border-style: none;">
-                <label class="item-input-wrapper">
-                    <input id="fromDate" data-format="dd/MM/yyyy" type="date" style="background-color: #fff; width:136px">&nbsp;<i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
+                <label class="item-input-wrapper typeDate">
+                    <input data-format="dd/MM/yyyy" type="date" style="background-color: #fff; width:136px" ng-model="endDate">&nbsp;<i class="ion-ios-calendar-outline" style="font-size: 30px; color: #ff9900;"></i>
                 </label>
             </div>
         </div>
     </div>
     <hr>
-
     <div class="row">
-        <div class="col text-left">
+        <div class="col text-left" ng-show="startDate!=endDate && endDate">
             <p style="font-size: 120%; font-weight: bold;">จำนวน</p>
         </div>
-        <div class="col text-center">
+        <div class="col text-center" ng-show="startDate!=endDate  && endDate">
             <label class="item-input-wrapper">
-                <input type="text" placeholder="{{dayDifference}}" style="background-color: #fff; text-align:center;">
+                <input type="text" placeholder="{{endDate - startDate |  date:'d'}}" style="background-color: #fff; text-align:center;" readonly>
             </label>
         </div>
-        <div class="col text-right">
+        <div class="col text-right" ng-show="startDate!=endDate  && endDate">
             <p style="font-size: 120%; font-weight: bold;">วัน</p>
         </div>
     </div>
@@ -94,7 +91,7 @@
             </button>
         </div>
         <div class="col text-center">
-            <button class="button button-block button-calm">
+            <button class="button button-block button-calm" ng-click="send(startDate,endDate)">
                 Send
             </button>
         </div>
