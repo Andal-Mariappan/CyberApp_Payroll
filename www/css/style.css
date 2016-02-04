@@ -251,7 +251,16 @@ input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
 }
+input[type="date"]::-webkit-clear-button {
+ -webkit-appearance: none;
+  display: none;
+}
 
 .typeDate {
     margin-left: -10px;
+}
+::-webkit-calendar-picker-indicator {
+
+  color: rgba(0, 0, 0, 0);
+  opacity: 1
 }

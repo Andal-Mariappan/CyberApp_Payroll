@@ -28,6 +28,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
             controller: 'loginController'
         })
         .state('home', {
+            cache: false,
             url: '/views/home',
             templateUrl: 'views/home.html',
             controller: 'homeController'
@@ -51,6 +52,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
         .state('leaveDraft', {
             url: '/views/leaveDraft',
             templateUrl: 'views/leaveDraft.html',
+            controller: 'leaveController'
 
         })
         .state('register', {
