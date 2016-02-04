@@ -7,17 +7,11 @@
         <div class="col col-33" style="text-align:right;"></div>
     </div>
     </br>
-    </br>
     <div class="list">
-        <a href="#/views/leaveDraft" class="item item-icon-left" style="background-color: #EEEEEE;">
-            <i class="icon ion-ios-calendar-outline"  style="color: #ff9900;"></i>
-            <h2 style="font-weight: bold;">{{getLeavesData.LeaveType}} | {{getLeavesData.Created}}</h2>
+        <a href="#/views/leaveDraft/{{getLeavesData}}" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat="getLeavesData in getLeavesData | orderBy:'LeaveStartDateTime'" ng-show="getLeavesData.ApproveStatus =='S' ">
+            <i class="icon ion-android-calendar" style="color: #ff9900;"></i>
+            <h2 style="font-weight: bold;">{{getLeavesData.LeaveType == 1 ? "Sick Leave" : getLeavesData.LeaveType == 2 ? "Personal Leave " : getLeavesData.LeaveType == 3 ? "Annual Leave" : false}}  |  {{getLeavesData.LeaveStartDateTime | date:'dd MMMM yyyy'}}</h2>
             <p>{{getLeavesData.LeaveDetial}}</p>
-        </a>
-        <a href="#/views/leaveDraft" class="item item-icon-left" style="background-color: #EEEEEE;">
-            <i class="icon ion-ios-calendar-outline"  style="color: #ff9900;"></i>
-            <h2 style="font-weight: bold;">Personal Leave | 24 December 2015</h2>
-            <p>ไปทำใบขับขี่</p>
         </a>
     </div>
 </ion-content>

@@ -4,7 +4,6 @@ myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSo
     function($scope, employeeService, $cordovaSocialSharing, $location, $timeout,
         $ionicLoading) {
         
-        $scope.employeeData = [];
         employeeService.getEmployeeByEmail().then(function(results) {
             //alert("Success");
             var employeeProfile = results.data;

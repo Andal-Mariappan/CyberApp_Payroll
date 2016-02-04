@@ -1,6 +1,32 @@
-myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter',
+'use strict';
+myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter', '$http', '$stateParams',
 
-    function($scope, leaveService, $cordovaCalendar, $filter, $route) {
+    function($scope, leaveService, $cordovaCalendar, $filter, $http, $stateParams) {
+
+        var ID;
+        var LeaveType;
+        $scope.leaveHalf;
+        $scope.loadLeaveData = function() {
+
+            var leaveDatas = angular.fromJson($stateParams.getLeavesData);
+
+            var setStartDate = leaveDatas.LeaveStartDateTime;
+            var setEndDate = leaveDatas.LeaveEndDateTime;
+
+            ID = leaveDatas.ID;
+            LeaveType = String(leaveDatas.LeaveType);
+            $scope.remark = leaveDatas.LeaveDetial;
+            $scope.startDate = new Date(setStartDate);
+            $scope.endDate = new Date(setEndDate);
+            $scope.leaveHalf = leaveDatas.LeaveHalf;
+
+            if ($scope.leaveHalf) {
+                //alert($scope.leaveHalf);
+                $scope.toggles = true;
+                $scope.data.active = true;
+            }
+
+        }
 
         $scope.startDate = new Date(), 'dd/MM/yyyy';
         $scope.endDate = new Date(), 'dd/MM/yyyy';
@@ -10,7 +36,12 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
             active: false
         }
 
+        $scope.LeaveType = function() {
+            $scope.LeaveType = LeaveType;
+        }
+
         $scope.toggle = function() {
+
             $scope.data.active = !$scope.data.active;
 
         }
@@ -31,10 +62,10 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
         $scope.datas = function(startDate, endDate) {
 
             if ($scope.data.active) {
-                $scope.diffDays = null;
+                $scope.diffDays = 0;
                 return true;
             } else {
-                
+
                 $scope.diffDays = parseInt((endDate - startDate) / 86400000 + 1);
 
                 if (endDate < startDate) {
@@ -46,18 +77,70 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
 
         }
 
-        $scope.sendLeave = function(e, a) {
+
+        $scope.sendLeave = function(LeaveType, remark, startDate, endDate, diffDays) {
+
+            var halfDay;
+
+            if ($scope.data.active) {
+                halfDay = true;
+            } else {
+                halfDay = false;
+            }
+
+            var leaveData = {
+
+                ID,
+                Email: "",
+                    LeaveType: parseInt(LeaveType),
+                    LeaveDetial: remark,
+                    LeaveStartDateTime: startDate,
+                    LeaveEndDateTime: endDate,
+                    LeaveHalf: halfDay,
+                    LeaveTime: diffDays,
+                    ApproveStatus: "W",
+            };
+
+            leaveService.createLeaves(leaveData).then(function(response) {
+                alert("Susscess");
+            }, function(error) {
+                alert(error.data.Message);
+            });
+
+        }
+        $scope.remark = "";
+
+        $scope.saveLeave = function(LeaveType, remark, startDate, endDate, diffDays) {
+
+            var halfDay;
+
+            if ($scope.data.active) {
+                halfDay = true;
+            } else {
+                halfDay = false;
+            }
+
+            var leaveData = {
+
+                ID,
+                Email: "",
+                    LeaveType: parseInt(LeaveType),
+                    LeaveDetial: remark,
+                    LeaveStartDateTime: startDate,
+                    LeaveEndDateTime: endDate,
+                    LeaveHalf: halfDay,
+                    LeaveTime: diffDays,
+                    ApproveStatus: "S",
+            }
+
+            leaveService.createLeaves(leaveData).then(function(response) {
+                alert("Susscess");
+            }, function(error) {
+                alert(error.data.Message);
+            });
 
         }
 
-        $scope.createLeavesData = [];
-        $scope.updateLeavesData = [];
-        $scope.approveLeavesData = [];
-        $scope.rejectLeavesData = [];
-        $scope.getLeavesData = [];
-        $scope.deleteLeavesData = [];
-        $scope.getLeaveDraftsData = [];
-        $scope.createLeaveDraftsData = [];
 
         // leaveService.createLeaves().then(function(results) {
 
@@ -91,14 +174,12 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
         //     alert(error.data.message);
         // })
 
-        // leaveService.getLeaves().then(function(results) {
+        leaveService.getLeavesByEmail().then(function(results) {
 
-        //     $scope.getLeavesData = results.data;
+            $scope.getLeavesData = results.data;
 
 
-        // // }, function(error) {
-        // //     alert(error.data.message);
-        // })
+        })
 
 
         // leaveService.deleteLeavesData().then(function(results) {

@@ -45,12 +45,14 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
             controller: 'leaveController'
         })
         .state('leaveList', {
+            cache: false,
             url: '/views/leaveList',
             templateUrl: 'views/leaveList.html',
             controller: 'leaveController'
         })
         .state('leaveDraft', {
-            url: '/views/leaveDraft',
+            cache: false,
+            url: '/views/leaveDraft/:getLeavesData',
             templateUrl: 'views/leaveDraft.html',
             controller: 'leaveController'
 
