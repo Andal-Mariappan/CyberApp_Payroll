@@ -1,7 +1,7 @@
 'use strict';
-myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter', '$http', '$stateParams',
+myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter', '$http', '$stateParams', '$location',
 
-    function($scope, leaveService, $cordovaCalendar, $filter, $http, $stateParams) {
+    function($scope, leaveService, $cordovaCalendar, $filter, $http, $stateParams, $location) {
 
         var ID;
         var LeaveType;
@@ -90,22 +90,24 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
 
             var leaveData = {
 
-                ID,
+                ID: ID,
                 Email: "",
-                    LeaveType: parseInt(LeaveType),
-                    LeaveDetial: remark,
-                    LeaveStartDateTime: startDate,
-                    LeaveEndDateTime: endDate,
-                    LeaveHalf: halfDay,
-                    LeaveTime: diffDays,
-                    ApproveStatus: "W",
+                LeaveType: parseInt(LeaveType),
+                LeaveDetial: remark,
+                LeaveStartDateTime: startDate,
+                LeaveEndDateTime: endDate,
+                LeaveHalf: halfDay,
+                LeaveTime: diffDays,
+                ApproveStatus: "W",
             };
 
-            leaveService.createLeaves(leaveData).then(function(response) {
-                alert("Susscess");
-            }, function(error) {
-                alert(error.data.Message);
-            });
+            // leaveService.createLeaves(leaveData).then(function(response) {
+            //     alert("Susscess");
+            // }, function(error) {
+            //     alert(error.data.Message);
+            // });
+
+            $location.path('/views/employeeDetail');
 
         }
         $scope.remark = "";
@@ -122,22 +124,24 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
 
             var leaveData = {
 
-                ID,
+                ID: ID,
                 Email: "",
-                    LeaveType: parseInt(LeaveType),
-                    LeaveDetial: remark,
-                    LeaveStartDateTime: startDate,
-                    LeaveEndDateTime: endDate,
-                    LeaveHalf: halfDay,
-                    LeaveTime: diffDays,
-                    ApproveStatus: "S",
+                LeaveType: parseInt(LeaveType),
+                LeaveDetial: remark,
+                LeaveStartDateTime: startDate,
+                LeaveEndDateTime: endDate,
+                LeaveHalf: halfDay,
+                LeaveTime: diffDays,
+                ApproveStatus: "S",
             }
 
-            leaveService.createLeaves(leaveData).then(function(response) {
-                alert("Susscess");
-            }, function(error) {
-                alert(error.data.Message);
-            });
+            // leaveService.createLeaves(leaveData).then(function(response) {
+            //     alert("Susscess");
+            // }, function(error) {
+            //     alert(error.data.Message);
+            // });
+
+            $location.path('/views/leaveList');
 
         }
 

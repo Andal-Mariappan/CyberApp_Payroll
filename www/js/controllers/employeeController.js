@@ -1,18 +1,25 @@
 'use strict';
-myApp.controller('employeeController', ['$scope', 'employeeService', '$cordovaSocialSharing', '$location', '$timeout',
+myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveService', '$cordovaSocialSharing', '$location', '$timeout',
     '$ionicLoading',
-    function($scope, employeeService, $cordovaSocialSharing, $location, $timeout,
+    function($scope, employeeService, leaveService, $cordovaSocialSharing, $location, $timeout,
         $ionicLoading) {
-        
+
         employeeService.getEmployeeByEmail().then(function(results) {
             //alert("Success");
             var employeeProfile = results.data;
-            $scope.employeeData = employeeProfile.EmployeeData; 
+            $scope.employeeData = employeeProfile.EmployeeData;
             $scope.currentChkIn = employeeProfile.CurrentChkIn;
             $scope.CheckIn = employeeProfile.CheckIn;
 
         }, function(error) {
             alert(error.data.message);
+        });
+
+        leaveService.getLeavesByEmail().then(function(results) {
+
+            $scope.getLeavesData = results.data;
+
+
         });
 
         $scope.shareCard = function() {

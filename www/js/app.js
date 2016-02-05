@@ -40,6 +40,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
             controller: 'employeeController'
         })
         .state('leave', {
+            cache: false,
             url: '/views/leave',
             templateUrl: 'views/leave.html',
             controller: 'leaveController'
@@ -82,6 +83,12 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
             templateUrl: 'views/viewTeams.html',
             controller: 'viewTeamsController'
         })
+        .state('leaveView', {
+            url: '/views/leaveView',
+            templateUrl: 'views/leaveView.html',
+            controller: 'leaveController'
+        })
+
 
 
 
