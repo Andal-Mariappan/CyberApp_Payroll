@@ -1,11 +1,15 @@
 'use strict';
 myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveService', '$cordovaSocialSharing', '$location', '$timeout',
-    '$ionicLoading',
+    '$ionicLoading', '$templateCache',
     function($scope, employeeService, leaveService, $cordovaSocialSharing, $location, $timeout,
-        $ionicLoading) {
+        $ionicLoading, $templateCache) {
+
+        $scope.startDates = new Date(), 'dd/MM/yyyy';
 
         employeeService.getEmployeeByEmail().then(function(results) {
             //alert("Success");
+
+
             var employeeProfile = results.data;
             $scope.employeeData = employeeProfile.EmployeeData;
             $scope.currentChkIn = employeeProfile.CurrentChkIn;
@@ -21,6 +25,37 @@ myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveServi
 
 
         });
+
+        $scope.chkDateInDay = function(LeaveStartDateTime) {
+
+            var LeaveStartDateTime = new Date(LeaveStartDateTime);
+            $scope.startDates;
+
+            var resultsDatesInDay = (LeaveStartDateTime - $scope.startDates) / 86400000 + 1;
+
+            if ((resultsDatesInDay) >= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        $scope.chkDateInMonth = function(monthDateTimeIn) {
+
+            var monthDateTimeIn = new Date(monthDateTimeIn);
+            $scope.startDates;
+
+            $scope.startDates;
+                var months;
+                months = ($scope.startDates.getFullYear() - monthDateTimeIn.getFullYear()) * 12;
+                months -= monthDateTimeIn.getMonth() + 1;
+                months += $scope.startDates.getMonth() + 1;
+                
+                if(months !=0){
+                    return true;
+                }
+           
+        }
 
         $scope.shareCard = function() {
             $timeout(function() {

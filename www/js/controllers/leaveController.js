@@ -19,6 +19,7 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
             $scope.startDate = new Date(setStartDate);
             $scope.endDate = new Date(setEndDate);
             $scope.leaveHalf = leaveDatas.LeaveHalf;
+            $scope.Days = leaveDatas.LeaveTime;
 
             if ($scope.leaveHalf) {
                 //alert($scope.leaveHalf);
@@ -44,6 +45,11 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
 
             $scope.data.active = !$scope.data.active;
 
+        }
+
+        $scope.gotoEmp = function(){
+
+            $location.path('/views/employeeDetail');
         }
 
         $scope.dateLeave = function(startDate, endDate) {
@@ -106,7 +112,7 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
 
                 $ionicPopup.alert({
                     title: 'Success',
-                    content: '<div class="text-center"><i class="ion-checkmark-circled" style="font-size: 50px; color: #33FF00; " ></i></div>',
+                    content: '<div class="text-center"><i class="ion-checkmark-circled" style="font-size: 50px; color: #66FF33; " ></i></div>',
                     buttons: [{
                         text: '<b>OK</b>',
                         type: 'button-positive',
@@ -150,7 +156,7 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
 
                 $ionicPopup.alert({
                     title: 'Success',
-                    content: '<div class="text-center"><i class="ion-checkmark-circled" style="font-size: 50px; color: #33FF00; " ></i></div>',
+                    content: '<div class="text-center"><i class="ion-checkmark-circled" style="font-size: 50px; color: #66FF33; " ></i></div>',
                     buttons: [{
                         text: '<b>OK</b>',
                         type: 'button-positive',
