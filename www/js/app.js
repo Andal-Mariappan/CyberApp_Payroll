@@ -84,9 +84,8 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
             controller: 'viewTeamsController'
         })
         .state('leaveView', {
-            url: '/views/leaveView',
+            url: '/views/leaveView/:getLeavesData',
             templateUrl: 'views/leaveView.html',
-            controller: 'leaveController'
         })
 
 

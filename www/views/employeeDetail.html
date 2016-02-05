@@ -142,7 +142,7 @@
             </div>
             <div ng-show="var=='1'" class="scrollAreas">
                 <div class="list">
-                    <a href="/views/leaveList" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat="item in getLeavesData" ng-hide="item.ApproveStatus =='S'">
+                    <a href="#/views/leaveView/{{item}}" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat="item in getLeavesData | orderBy:'LeaveStartDateTime'" ng-hide="item.ApproveStatus =='S'">
                         <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
                         <h2 style="font-weight: bold;">{{item.LeaveType == 1 ? "Sick Leave" : item.LeaveType == 2 ? "Personal Leave " : item.LeaveType == 3 ? "Annual Leave" : false}}  |  {{item.LeaveStartDateTime | date : 'dd MMMM yyyy'}}</h2>
                         <p>{{item.LeaveDetial}}</p>

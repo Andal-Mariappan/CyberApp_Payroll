@@ -1,7 +1,7 @@
 'use strict';
-myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter', '$http', '$stateParams', '$location',
+myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter', '$http', '$stateParams', '$location', '$ionicPopup',
 
-    function($scope, leaveService, $cordovaCalendar, $filter, $http, $stateParams, $location) {
+    function($scope, leaveService, $cordovaCalendar, $filter, $http, $stateParams, $location, $ionicPopup) {
 
         var ID;
         var LeaveType;
@@ -101,13 +101,23 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
                 ApproveStatus: "W",
             };
 
-            // leaveService.createLeaves(leaveData).then(function(response) {
-            //     alert("Susscess");
-            // }, function(error) {
-            //     alert(error.data.Message);
-            // });
+            leaveService.createLeaves(leaveData).then(function(response) {
+                //alert("Susscess");
 
-            $location.path('/views/employeeDetail');
+                $ionicPopup.alert({
+                    title: 'Success',
+                    content: '<div class="text-center"><i class="ion-checkmark-circled" style="font-size: 50px; color: #33FF00; " ></i></div>',
+                    buttons: [{
+                        text: '<b>OK</b>',
+                        type: 'button-positive',
+                    }]
+                }).then(function(res) {
+                    console.log('Test Alert Box');
+                });
+
+            }, function(error) {
+                alert(error.data.Message);
+            });
 
         }
         $scope.remark = "";
@@ -135,13 +145,29 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
                 ApproveStatus: "S",
             }
 
-            // leaveService.createLeaves(leaveData).then(function(response) {
-            //     alert("Susscess");
-            // }, function(error) {
-            //     alert(error.data.Message);
-            // });
+            leaveService.createLeaves(leaveData).then(function(response) {
+                //alert("Susscess");
 
-            $location.path('/views/leaveList');
+                $ionicPopup.alert({
+                    title: 'Success',
+                    content: '<div class="text-center"><i class="ion-checkmark-circled" style="font-size: 50px; color: #33FF00; " ></i></div>',
+                    buttons: [{
+                        text: '<b>OK</b>',
+                        type: 'button-positive',
+                    }]
+                }).then(function(res) {
+                    if (res) {
+                        $location.path('/views/leaveList');
+                    }
+                });
+
+            }, function(error) {
+                alert(error.data.Message);
+            });
+
+
+
+
 
         }
 

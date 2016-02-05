@@ -73,7 +73,7 @@ myApp.controller('registerController', ['$scope', '$location', '$timeout', 'auth
 
         var confirmPopup = $ionicPopup.confirm({
             title: 'Confirm exit application',
-            template: 'Are you sure you want to exit?'
+            template: '<div class="text-center">Are you sure you want to exit?</div>'
         });
 
         confirmPopup.then(function(res) {

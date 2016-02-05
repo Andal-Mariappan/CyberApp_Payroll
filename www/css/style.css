@@ -217,7 +217,7 @@ input[type="radio"] {
 }
 
 .scrollAreas {
-    height: 462px;
+    height: 400px;
     width: 100%;
     overflow: auto;
 }
@@ -263,4 +263,8 @@ input[type="date"]::-webkit-clear-button {
 
   color: rgba(0, 0, 0, 0);
   opacity: 1
+}
+.spinner svg {
+  width: 100% !important;
+  height: 85px !important;
 }
