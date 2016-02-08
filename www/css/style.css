@@ -251,20 +251,32 @@ input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
 }
+
 input[type="date"]::-webkit-clear-button {
- -webkit-appearance: none;
-  display: none;
+    -webkit-appearance: none;
+    display: none;
 }
 
 .typeDate {
     margin-left: -10px;
 }
-::-webkit-calendar-picker-indicator {
 
-  color: rgba(0, 0, 0, 0);
-  opacity: 1
+::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1
 }
+
 .spinner svg {
-  width: 100% !important;
-  height: 85px !important;
+    width: 100% !important;
+    height: 85px !important;
+}
+
+.popup {
+    width: 90% !important;
+    height: auto;
+}
+
+.alertDetail {
+    color: #FFC901;
+    font-size: 150%;
 }

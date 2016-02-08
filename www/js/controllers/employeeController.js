@@ -1,8 +1,8 @@
 'use strict';
 myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveService', '$cordovaSocialSharing', '$location', '$timeout',
-    '$ionicLoading', '$templateCache',
+    '$ionicLoading', '$templateCache', '$ionicPopup', '$filter',
     function($scope, employeeService, leaveService, $cordovaSocialSharing, $location, $timeout,
-        $ionicLoading, $templateCache) {
+        $ionicLoading, $templateCache, $ionicPopup, $filter) {
 
         $scope.startDates = new Date(), 'dd/MM/yyyy';
 
@@ -33,7 +33,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveServi
 
             var resultsDatesInDay = (LeaveStartDateTime - $scope.startDates) / 86400000 + 1;
 
-            if ((resultsDatesInDay) >= 0) {
+            if ((resultsDatesInDay) >= 0.5) {
                 return false;
             } else {
                 return true;
@@ -45,16 +45,74 @@ myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveServi
             var monthDateTimeIn = new Date(monthDateTimeIn);
             $scope.startDates;
 
+            var months;
+            months = ($scope.startDates.getFullYear() - monthDateTimeIn.getFullYear()) * 12;
+            months -= monthDateTimeIn.getMonth() + 1;
+            months += $scope.startDates.getMonth() + 1;
+
+            if (months != 0) {
+                return true;
+            }
+
+        }
+        $scope.showDetailLeave = function(e) {
+
+            var LeaveType = e.LeaveType;
+            var LeaveHalf = e.LeaveHalf;
+            var LeaveStartDateTime = $filter('date')(e.LeaveStartDateTime, 'dd MMMM yyyy');
+            var LeaveEndDateTime = $filter('date')(e.LeaveEndDateTime, 'dd MMMM yyyy');
+
+            // {{leaveHalf == true ? "ครึ่งวัน" : Days}}
+            if (LeaveHalf == true) {
+                LeaveHalf = "ครึ่งวัน";
+            } else {
+                LeaveHalf = e.LeaveTime;
+            }
+
+            if (LeaveType == 1) {
+                LeaveType = "Sick Leave"
+            } else if (LeaveType == 2) {
+                LeaveType = "Personal Leave"
+            } else if (LeaveType == 3) {
+                LeaveType = "Annual Leave"
+            }
+
+            $ionicPopup.alert({
+                title: '<div class="alertDetail">Leave Detail</div>',
+                content: '<div><b>Leave Type</b> :  &nbsp;&nbsp;&nbsp;' + LeaveType + '</div><br><div><b>Remark :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + e.LeaveDetial + '</div><br><div><b>Start Date :&nbsp;&nbsp;&nbsp;&nbsp; </b>' + LeaveStartDateTime + '</div><br><div><b>End Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + LeaveEndDateTime + '</div><br><div><b>จำนวน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + LeaveHalf + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>วัน</b></div>',
+                cssClass: '',
+                buttons: [{
+                    text: '<b>Close</b>',
+                    type: 'button-energized',
+                }]
+            })
+        }
+
+        $scope.Leaved = function(LeaveStartDateTime) {
+
+            var months;
+            var LeaveStartDateTime = new Date(LeaveStartDateTime);
             $scope.startDates;
-                var months;
-                months = ($scope.startDates.getFullYear() - monthDateTimeIn.getFullYear()) * 12;
-                months -= monthDateTimeIn.getMonth() + 1;
+
+            var resultsDatesInDay = (LeaveStartDateTime - $scope.startDates) / 86400000 + 1;
+
+            if ((resultsDatesInDay) <= 1) {
+
+                months = ($scope.startDates.getFullYear() - LeaveStartDateTime.getFullYear()) * 12;
+                months -= LeaveStartDateTime.getMonth() + 1;
                 months += $scope.startDates.getMonth() + 1;
-                
-                if(months !=0){
+
+                if (months == 0) {
                     return true;
+                } else {
+                    return false;
                 }
-           
+            } else {
+                return false;
+            }
+
+
+
         }
 
         $scope.shareCard = function() {

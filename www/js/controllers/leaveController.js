@@ -162,7 +162,7 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
                         type: 'button-positive',
                     }]
                 }).then(function(res) {
-                    if (res) {
+                    if (!res) {
                         $location.path('/views/leaveList');
                     }
                 });
@@ -170,10 +170,6 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
             }, function(error) {
                 alert(error.data.Message);
             });
-
-
-
-
 
         }
 

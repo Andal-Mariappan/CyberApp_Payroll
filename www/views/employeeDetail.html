@@ -107,10 +107,10 @@
             </div>
             <div ng-show="var=='2'" class="scrollArea">
                 <div class="list">
-                    <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat=" item in leaved">
-                        <i class="icon ion-ios-calendar-outline" style="color: #ff9900;"></i>
-                        <h2 style="font-weight: bold;">{{item.leaveType}} | {{item.leaveStartDate}}</h2>
-                        <p>{{item.leaveDetail}}</p>
+                    <a ng-click="showDetailLeave(item)" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat=" item in getLeavesData | orderBy:'-LeaveStartDateTime'" ng-show="item.ApproveStatus =='A' && Leaved(item.LeaveStartDateTime)">
+                        <i class="icon ion-android-calendar" style="color: #ff9900;"></i>
+                        <h2 style="font-weight: bold;">{{item.LeaveType == 1 ? "Sick Leave" : item.LeaveType == 2 ? "Personal Leave " : item.LeaveType == 3 ? "Annual Leave" : false}}  |  {{item.LeaveStartDateTime | date : 'dd MMMM yyyy'}}</h2>
+                        <p>{{item.LeaveDetial}}</p>
                     </a>
                 </div>
             </div>
@@ -142,8 +142,8 @@
             </div>
             <div ng-show="var=='1'" class="scrollAreas">
                 <div class="list">
-                    <a href="#/views/leaveView/{{item}}" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat="item in getLeavesData | orderBy:'LeaveStartDateTime'" ng-hide="item.ApproveStatus =='S' || chkDateInDay(item.LeaveStartDateTime)" >
-                        <i class="icon ion-android-calendar" style="color: #ff9900;"></i>
+                    <a ng-click="showDetailLeave(item)"  class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat="item in getLeavesData | orderBy:'LeaveStartDateTime'" ng-hide="item.ApproveStatus =='S' || chkDateInDay(item.LeaveStartDateTime)" >
+                        <i class="icon ion-android-calendar" style="color: #ff9900;" ></i>
                         <h2 style="font-weight: bold;">{{item.LeaveType == 1 ? "Sick Leave" : item.LeaveType == 2 ? "Personal Leave " : item.LeaveType == 3 ? "Annual Leave" : false}}  |  {{item.LeaveStartDateTime | date : 'dd MMMM yyyy'}}</h2>
                         <p>{{item.LeaveDetial}}</p>
                         <span class="badgeleave {{item.ApproveStatus =='A' ? 'badge-adjust' : item.ApproveStatus =='W' ? 'badge-wait' : 'badge-reject'}}"><p id="fontStatus">{{item.ApproveStatus}}</p></span>
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div ng-show="var=='2'" class="scrollAreas">
-                <div class="list">
+                <div class="list" >
                     <a href="#" class="item item-icon-left" style="background-color: #EEEEEE;" ng-repeat="item in adjust">
                         <i class="icon ion-android-calendar" style="color: #ff9900;"></i>
                         <h2 style="font-weight: bold;">{{item.adjustDate}}</h2>

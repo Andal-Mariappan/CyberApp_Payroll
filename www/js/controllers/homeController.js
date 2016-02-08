@@ -17,7 +17,6 @@ myApp.controller('homeController', ['$scope', 'employeeService', '$interval', '$
 
 
 
-
         $scope.exitApp = function() {
 
             var confirmPopup = $ionicPopup.confirm({
