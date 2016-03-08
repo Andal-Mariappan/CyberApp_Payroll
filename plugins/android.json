@@ -42,6 +42,9 @@
         },
         "cordova-plugin-datepicker": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         }
     },
     "dependent_plugins": {}

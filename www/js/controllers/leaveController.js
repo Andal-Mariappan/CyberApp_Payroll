@@ -1,7 +1,9 @@
 'use strict';
-myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter', '$http', '$stateParams', '$location', '$ionicPopup',
+myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter',
+    '$http', '$stateParams', '$location', '$ionicPopup', '$ionicActionSheet', '$timeout',
 
-    function($scope, leaveService, $cordovaCalendar, $filter, $http, $stateParams, $location, $ionicPopup) {
+    function($scope, leaveService, $cordovaCalendar, $filter, $http, $stateParams,
+        $location, $ionicPopup, $ionicActionSheet, $timeout) {
 
         var ID;
         var LeaveType;
@@ -41,13 +43,18 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
             $scope.LeaveType = LeaveType;
         }
 
+        $scope.deleteLeaveList = function() {
+            alert("test");
+            location.path('/views/leaveList')
+        }
+
         $scope.toggle = function() {
 
             $scope.data.active = !$scope.data.active;
 
         }
 
-        $scope.gotoEmp = function(){
+        $scope.gotoEmp = function() {
 
             $location.path('/views/employeeDetail');
         }
@@ -173,7 +180,45 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
 
         }
 
+        $scope.check = function(startDate) {
 
+            var checkDate = new Date();
+            if (startDate < checkDate) {
+                return true;
+            }
+        }
+
+        // $scope.showActionSheet = function(getLeavesData) {
+        //     var getLeavesData = getLeavesData;
+        //     // Show the action sheet
+        //     var hideSheet = $ionicActionSheet.show({
+        //         buttons: [
+        //             { text: '<center><i class="ion-edit"> </i> Detail</center>' }
+        //         ],
+        //         destructiveText: '<center><i class="ion-trash-a"> </i> Delete</center>',
+        //         titleText: '<center>Modify your leave</center>',
+        //         // cancelText: 'Cancel',
+        //         cancel: function() {
+        //             // add cancel code..
+        //         },
+        //         buttonClicked: function(index) {
+
+        //             getLeavesData;
+        //             if (index === 0) {
+        //                 $location.path('/views/leaveDraft/getLeavesData');
+        //             }
+        //         },
+        //         destructiveButtonClicked: function() {
+        //             alert("Delete");
+        //         }
+        //     });
+
+        //     // For example's sake, hide the sheet after two seconds
+        //     $timeout(function() {
+        //         hideSheet();
+        //     }, 3000);
+
+        // };
         // leaveService.createLeaves().then(function(results) {
 
         //     $scope.createLeavesData = results.data;

@@ -6,8 +6,22 @@
 var myApp = angular.module('starter', ['ionic', 'LocalStorageModule', 'tc.chartjs', 'ngCordova'])
 
 
-myApp.run(function($ionicPlatform) {
+myApp.run(function($ionicPlatform, $ionicPopup) {
     $ionicPlatform.ready(function() {
+
+        if (window.Connection) {
+            if (navigator.connection.type == Connection.NONE) {
+                $ionicPopup.alert({
+                        title: "Internet Disconnected",
+                        content: "<p class='text-center'>The internet is disconnected on your device.</p>"
+                    })
+                    .then(function(result) {
+                        if (result) {
+                            ionic.Platform.exitApp();
+                        }
+                    });
+            }
+        }
 
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -16,6 +30,8 @@ myApp.run(function($ionicPlatform) {
         if (window.StatusBar) {
             StatusBar.styleDefault();
         }
+
+
     });
 })
 

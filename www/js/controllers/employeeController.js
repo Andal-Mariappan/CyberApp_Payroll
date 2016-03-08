@@ -31,9 +31,9 @@ myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveServi
             var LeaveStartDateTime = new Date(LeaveStartDateTime);
             $scope.startDates;
 
-            var resultsDatesInDay = (LeaveStartDateTime - $scope.startDates) / 86400000 + 1;
+            var resultsDatesInDay = parseInt((LeaveStartDateTime - $scope.startDates) / 86400000 + 1);
 
-            if ((resultsDatesInDay) >= 0.5) {
+            if ((resultsDatesInDay) > 1) {
                 return false;
             } else {
                 return true;
@@ -79,7 +79,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveServi
 
             $ionicPopup.alert({
                 title: '<div class="alertDetail">Leave Detail</div>',
-                content: '<div><b>Leave Type</b> :  &nbsp;&nbsp;&nbsp;' + LeaveType + '</div><br><div><b>Remark :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + e.LeaveDetial + '</div><br><div><b>Start Date :&nbsp;&nbsp;&nbsp;&nbsp; </b>' + LeaveStartDateTime + '</div><br><div><b>End Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + LeaveEndDateTime + '</div><br><div><b>จำนวน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + LeaveHalf + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>วัน</b></div>',
+                content: '<div><b>Leave Type</b> :  &nbsp;&nbsp;' + LeaveType + '</div><br><div><b>Remark :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + e.LeaveDetial + '</div><br><div><b>Start Date :&nbsp;&nbsp;&nbsp;&nbsp; </b>' + LeaveStartDateTime + '</div><br><div><b>End Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + LeaveEndDateTime + '</div><br><div><b>จำนวน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>' + LeaveHalf + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>วัน</b></div>',
                 cssClass: '',
                 buttons: [{
                     text: '<b>Close</b>',
@@ -94,7 +94,7 @@ myApp.controller('employeeController', ['$scope', 'employeeService', 'leaveServi
             var LeaveStartDateTime = new Date(LeaveStartDateTime);
             $scope.startDates;
 
-            var resultsDatesInDay = (LeaveStartDateTime - $scope.startDates) / 86400000 + 1;
+            var resultsDatesInDay = parseInt((LeaveStartDateTime - $scope.startDates) / 86400000 + 1);
 
             if ((resultsDatesInDay) <= 1) {
 
