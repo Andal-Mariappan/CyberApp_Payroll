@@ -20,7 +20,7 @@ myApp.factory('leaveService', ['$http', 'ngAuthSettings', 'localStorageService',
                 });
             } else {
 
-                return $http.put(serviceBase + 'api/Leave/'+ leaveData.ID, leaveData).then(function(results) {
+                return $http.put(serviceBase + 'api/Leave/' + leaveData.ID, leaveData).then(function(results) {
                     return results;
                 });
             }
@@ -73,15 +73,16 @@ myApp.factory('leaveService', ['$http', 'ngAuthSettings', 'localStorageService',
 
     };
 
-    // var _deleteLeaves = function() {
-    //     // $window.localStorage.removeItem();
-    //     var authData = localStorageService.get('authorizationData');
-    //     if (authData) {
-    //         return $http.delete(serviceBase + 'api/Leave=' + authData.ID).then(function(results) {
-    //             return results;
-    //         });
-    //     }
-    // };
+    var _deleteLeaves = function(leaveData) {
+        // $window.localStorage.removeItem();
+        // var authData = localStorageService.get('authorizationData');
+
+        return $http.delete(serviceBase + 'api/Leave/' + leaveData.ID, leaveData).then(function(results) {
+            return results;
+        });
+        
+
+    };
 
     // var _getLeaveDrafts = function() {
     //     var authData = localStorageService.get('authorizationData');
@@ -106,7 +107,7 @@ myApp.factory('leaveService', ['$http', 'ngAuthSettings', 'localStorageService',
     // leaveServiceFactory.approveLeaves = _approveLeaves;
     // leaveServiceFactory.rejectLeaves = _rejectLeaves;
     leaveServiceFactory.getLeavesByEmail = _getLeavesByEmail;
-    // leaveServiceFactory.deleteLeaves = _deleteLeaves;
+    leaveServiceFactory.deleteLeaves = _deleteLeaves;
     // leaveServiceFactory.getLeaveDrafts = _getLeaveDrafts;
     // leaveServiceFactory.createLeaveDrafts = _createLeaveDrafts;
     return leaveServiceFactory;

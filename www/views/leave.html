@@ -86,7 +86,7 @@
             </button>
         </div>
         <div class="col text-center">
-            <button class="button button-block button-calm" ng-disabled="endDate < startDate ? true : !remark ? true : false" ng-click="sendLeave(LeaveType,remark,startDate,endDate,diffDays)">
+            <button class="button button-block button-calm" ng-disabled="endDate < startDate ? true : !remark ? true : false  || check(startDate)" ng-click="sendLeave(LeaveType,remark,startDate,endDate,diffDays)">
                 Send
             </button>
         </div>

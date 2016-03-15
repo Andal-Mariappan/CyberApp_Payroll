@@ -1,27 +1,33 @@
 'use strict';
 myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar', '$filter',
-    '$http', '$stateParams', '$location', '$ionicPopup', '$ionicActionSheet', '$timeout',
+    '$http', '$stateParams', '$location', '$ionicPopup', '$ionicActionSheet', '$timeout', '$state',
 
     function($scope, leaveService, $cordovaCalendar, $filter, $http, $stateParams,
-        $location, $ionicPopup, $ionicActionSheet, $timeout) {
+        $location, $ionicPopup, $ionicActionSheet, $timeout, $state) {
 
         var ID;
         var LeaveType;
         $scope.leaveHalf;
         $scope.loadLeaveData = function() {
 
-            var leaveDatas = angular.fromJson($stateParams.getLeavesData);
+            var leaveID = $stateParams.ID;
+            var LeaveDetial = $stateParams.LeaveDetial;
+            var LeaveTypeData = $stateParams.LeaveType;
+            var LeaveTime = $stateParams.LeaveTime;
+            var LeaveHalf = JSON.parse($stateParams.LeaveHalf);
+            var LeaveStartDateTime = $stateParams.LeaveStartDateTime;
+            var LeaveEndDateTime = $stateParams.LeaveEndDateTime;
 
-            var setStartDate = leaveDatas.LeaveStartDateTime;
-            var setEndDate = leaveDatas.LeaveEndDateTime;
+            var setStartDate = LeaveStartDateTime;
+            var setEndDate = LeaveEndDateTime;
 
-            ID = leaveDatas.ID;
-            LeaveType = String(leaveDatas.LeaveType);
-            $scope.remark = leaveDatas.LeaveDetial;
+            ID = leaveID;
+            LeaveType = LeaveTypeData;
+            $scope.remark = LeaveDetial;
             $scope.startDate = new Date(setStartDate);
             $scope.endDate = new Date(setEndDate);
-            $scope.leaveHalf = leaveDatas.LeaveHalf;
-            $scope.Days = leaveDatas.LeaveTime;
+            $scope.leaveHalf = LeaveHalf;
+            $scope.Days = parseInt(LeaveTime);
 
             if ($scope.leaveHalf) {
                 //alert($scope.leaveHalf);
@@ -125,8 +131,9 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
                         type: 'button-positive',
                     }]
                 }).then(function(res) {
-                    console.log('Test Alert Box');
+                    $location.path('/views/employeeDetail');
                 });
+
 
             }, function(error) {
                 alert(error.data.Message);
@@ -183,42 +190,101 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
         $scope.check = function(startDate) {
 
             var checkDate = new Date();
-            if (startDate < checkDate) {
+            var resultsDatesInDay = parseInt((startDate - checkDate) / 86400000 + 2);
+
+            if (resultsDatesInDay < 1) {
                 return true;
             }
         }
 
-        // $scope.showActionSheet = function(getLeavesData) {
-        //     var getLeavesData = getLeavesData;
-        //     // Show the action sheet
-        //     var hideSheet = $ionicActionSheet.show({
-        //         buttons: [
-        //             { text: '<center><i class="ion-edit"> </i> Detail</center>' }
-        //         ],
-        //         destructiveText: '<center><i class="ion-trash-a"> </i> Delete</center>',
-        //         titleText: '<center>Modify your leave</center>',
-        //         // cancelText: 'Cancel',
-        //         cancel: function() {
-        //             // add cancel code..
-        //         },
-        //         buttonClicked: function(index) {
+        $scope.showActionSheet = function(getLeavesData) {
+            var getLeavesData = getLeavesData;
+            // Show the action sheet
+            var hideSheet = $ionicActionSheet.show({
+                buttons: [
+                    { text: '<center><i class="ion-compose"> </i> Edit</center>' },
+                    { text: '<center><div class="font-red"><i class="ion-trash-a"> </i> Delete<div></center>' }
+                ],
+                // destructiveText: '<center><i class="ion-trash-a"> </i> Delete</center>',
+                titleText: '<center>Setting</center>',
+                // cancelText: 'Cancel',
+                cancel: function() {
+                    // add cancel code..
+                },
+                buttonClicked: function(index) {
 
-        //             getLeavesData;
-        //             if (index === 0) {
-        //                 $location.path('/views/leaveDraft/getLeavesData');
-        //             }
-        //         },
-        //         destructiveButtonClicked: function() {
-        //             alert("Delete");
-        //         }
-        //     });
 
-        //     // For example's sake, hide the sheet after two seconds
-        //     $timeout(function() {
-        //         hideSheet();
-        //     }, 3000);
+                    if (index === 0) {
 
-        // };
+                        $state.go('leaveDraft', {
+
+                            ID: getLeavesData.ID,
+                            LeaveDetial: getLeavesData.LeaveDetial,
+                            LeaveEndDateTime: getLeavesData.LeaveEndDateTime,
+                            LeaveHalf: getLeavesData.LeaveHalf,
+                            LeaveStartDateTime: getLeavesData.LeaveStartDateTime,
+                            LeaveTime: getLeavesData.LeaveTime,
+                            LeaveType: getLeavesData.LeaveType,
+
+                        });
+
+                    } else if (index === 1) {
+
+                        $scope.remark = "";
+
+                        var halfDay;
+
+                        if ($scope.data.active) {
+                            halfDay = true;
+                        } else {
+                            halfDay = false;
+                        }
+
+                        var leaveData = {
+
+                            ID: getLeavesData.ID,
+                            Email: getLeavesData.Email,
+                            LeaveType: parseInt(getLeavesData.LeaveType),
+                            LeaveDetial: getLeavesData.LeaveDetial,
+                            LeaveStartDateTime: getLeavesData.LeaveStartDateTime,
+                            LeaveEndDateTime: getLeavesData.LeaveEndDateTime,
+                            LeaveHalf: getLeavesData.LeaveHalf,
+                            LeaveTime: getLeavesData.LeaveTime,
+                            ApproveStatus: getLeavesData.ApproveStatus,
+                        };
+
+                        leaveService.deleteLeaves(leaveData).then(function(response) {
+                            alert("Susscess");
+
+                            $ionicPopup.alert({
+                                title: 'Success',
+                                content: '<div class="text-center"><i class="ion-checkmark-circled" style="font-size: 50px; color: #66FF33; " ></i></div>',
+                                buttons: [{
+                                    text: '<b>OK</b>',
+                                    type: 'button-positive',
+                                }]
+                            }).then(function(res) {
+                                $location.path('/views/employeeDetail');
+                            });
+
+
+                        }, function(error) {
+                            alert(error.data.Message);
+                        });
+                    }
+                },
+                destructiveButtonClicked: function(getLeavesData) {
+
+
+                }
+            });
+
+            // For example's sake, hide the sheet after two seconds
+            $timeout(function() {
+                hideSheet();
+            }, 3000);
+
+        };
         // leaveService.createLeaves().then(function(results) {
 
         //     $scope.createLeavesData = results.data;

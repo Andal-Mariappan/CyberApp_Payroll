@@ -418,3 +418,6 @@ input[type="date"]::-webkit-clear-button {
 .platform-android .action-sheet-cancel {
     display: block;
 }
+.font-red{
+    color:red;
+}

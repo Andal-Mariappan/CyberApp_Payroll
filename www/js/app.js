@@ -69,10 +69,9 @@ myApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
         })
         .state('leaveDraft', {
             cache: false,
-            url: '/views/leaveDraft/:getLeavesData',
+            url: '/views/leaveDraft/:ID:LeaveDetial:LeaveEndDateTime:LeaveHalf:LeaveStartDateTime:LeaveTime:LeaveType',
             templateUrl: 'views/leaveDraft.html',
             controller: 'leaveController'
-
         })
         .state('register', {
             url: '/views/register',
