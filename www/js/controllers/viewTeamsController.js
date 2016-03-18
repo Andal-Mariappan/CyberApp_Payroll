@@ -1,6 +1,6 @@
 myApp.controller('viewTeamsController', ['$scope', '$cordovaGeolocation', 'viewTeamsService', function($scope, $cordovaGeolocation, viewTeamsService) {
 
-    var imgPathPrefix = "img/";
+    var imgPathPrefix = "";
     var mapOptions = {
         zoom: 15,
         center: new google.maps.LatLng(13.9338659, 100.7175381),
