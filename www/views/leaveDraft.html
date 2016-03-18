@@ -1,6 +1,6 @@
 <ion-content ng-init="loadLeaveData()">
     <div class="row row-bottom " style="text-align:left;">
-        <div class="col col-33"><a href="#/views/leaveList"><i class="ion-ios-arrow-back" style="font-size: 40px; color: #ff9900; " ></i></a></div>
+        <div class="col col-33"><a href="#/views/leaveList" nav-transition="ios"><i class="ion-ios-arrow-back" style="font-size: 40px; color: #ff9900; " ></i></a></div>
         <div class="col col-33" style="text-align:center;">
             <p style="font-size: 150%; color: #ff9900;">Leave</p>
         </div>
@@ -9,15 +9,15 @@
     <div class="row" ng-init="LeaveType()">
         <div class="col col-33">
             <input type="radio" ng-model="LeaveType" value="1" checked>
-            <label class="radio-label">Sick Leave</label>
+            <label class="radio-label"> Sick</label>
         </div>
         <div class="col col-33">
             <input type="radio" ng-model="LeaveType" value="2">
-            <label class="radio-label">Personal Leave</label>
+            <label class="radio-label"> Personal</label>
         </div>
         <div class="col col-33">
             <input type="radio" ng-model="LeaveType" value="3">
-            <label class="radio-label">Annual Leave</label>
+            <label class="radio-label"> Annual</label>
         </div>
     </div>
     <hr>
@@ -61,7 +61,7 @@
             <p style="font-size: 120%; font-weight: bold;">จำนวน</p>
         </div>
         <div class="col col-60 text-center" style="margin-top: -10px; margin-top: -6px;">
-            <input type="text" ng-model="Days" style="background-color: #EEEEEE; text-align:center; width: inherit;" ng-disabled="datas(startDate, endDate)" readonly>
+            <input type="text" ng-model="diffDays" style="background-color: #EEEEEE; text-align:center; width: inherit;" ng-disabled="datas(startDate, endDate)" readonly>
         </div>
         <div class="col col-20 text-right">
             <p style="font-size: 120%; font-weight: bold;">วัน</p>

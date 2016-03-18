@@ -240,18 +240,14 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
                             halfDay = false;
                         }
 
+
                         var leaveData = {
 
-                            ID: getLeavesData.ID,
-                            Email: getLeavesData.Email,
-                            LeaveType: parseInt(getLeavesData.LeaveType),
-                            LeaveDetial: getLeavesData.LeaveDetial,
-                            LeaveStartDateTime: getLeavesData.LeaveStartDateTime,
-                            LeaveEndDateTime: getLeavesData.LeaveEndDateTime,
-                            LeaveHalf: getLeavesData.LeaveHalf,
-                            LeaveTime: getLeavesData.LeaveTime,
-                            ApproveStatus: getLeavesData.ApproveStatus,
+                            ID: String(getLeavesData.ID)
                         };
+
+                        var aa = JSON.stringify(leaveData);
+                        console.log(aa);
 
                         leaveService.deleteLeaves(leaveData).then(function(response) {
                             alert("Susscess");
@@ -264,7 +260,7 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
                                     type: 'button-positive',
                                 }]
                             }).then(function(res) {
-                                $location.path('/views/employeeDetail');
+                                $location.path('/views/leaveList');
                             });
 
 
@@ -280,9 +276,9 @@ myApp.controller('leaveController', ['$scope', 'leaveService', '$cordovaCalendar
             });
 
             // For example's sake, hide the sheet after two seconds
-            $timeout(function() {
-                hideSheet();
-            }, 3000);
+            // $timeout(function() {
+            //     hideSheet();
+            // }, 3000);
 
         };
         // leaveService.createLeaves().then(function(results) {

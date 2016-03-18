@@ -98,9 +98,12 @@ input[type="radio"] {
 input[type="radio"]:checked+label {
     font-weight: bold;
     color: #110000;
+    margin-left: 5px;
 }
+
 input[type="radio"]+label {
     color: #AAAAAA;
+    margin-left: 5px;
 }
 
 .radio-label {
@@ -288,9 +291,11 @@ input[type="date"]::-webkit-clear-button {
     color: #FFC901;
     font-size: 150%;
 }
+
 .iconDelete {
     padding-left: 280px;
 }
+
 .platform-android .action-sheet-backdrop {
     -webkit-transition: background-color 150ms ease-in-out;
     transition: background-color 150ms ease-in-out;
@@ -311,7 +316,7 @@ input[type="date"]::-webkit-clear-button {
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
     -webkit-transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
-    transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+    transition: all ubic-bezier(0.6, -0.28, 0.74, 0.05) 500ms
     position: absolute;
     bottom: 0;
     left: 0;
@@ -357,7 +362,8 @@ input[type="date"]::-webkit-clear-button {
     color: #ff3b30;
 }
 
-.platform-android .action-sheet .button.active, .platform-android .action-sheet .button.activated {
+.platform-android .action-sheet .button.active,
+.platform-android .action-sheet .button.activated {
     box-shadow: none;
     border-color: #d1d3d6;
     color: #007aff;
@@ -411,13 +417,15 @@ input[type="date"]::-webkit-clear-button {
     pointer-events: auto;
 }
 
-.platform-android .action-sheet .action-sheet-title, .platform-android .action-sheet .button {
+.platform-android .action-sheet .action-sheet-title,
+.platform-android .action-sheet .button {
     text-align: center;
 }
 
 .platform-android .action-sheet-cancel {
     display: block;
 }
-.font-red{
-    color:red;
+
+.font-red {
+    color: red;
 }

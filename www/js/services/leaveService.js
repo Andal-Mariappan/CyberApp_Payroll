@@ -77,7 +77,7 @@ myApp.factory('leaveService', ['$http', 'ngAuthSettings', 'localStorageService',
         // $window.localStorage.removeItem();
         // var authData = localStorageService.get('authorizationData');
 
-        return $http.delete(serviceBase + 'api/Leave/' + leaveData.ID, leaveData).then(function(results) {
+        return $http.delete(serviceBase + 'api/Leave/', leaveData).then(function(results) {
             return results;
         });
         
