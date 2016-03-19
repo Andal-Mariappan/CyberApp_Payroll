@@ -10,9 +10,10 @@ myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordov
 
             document.addEventListener("deviceready", function() {
 
+                
                 var platforms = $cordovaDevice.getPlatform();
                 var device = $cordovaDevice.getUUID();
-
+                
                 deviceAuthService.getDeviceAuthService(device, platforms).then(function(results) {
 
                     if (results.data) {
@@ -39,32 +40,32 @@ myApp.controller('introController', ['$scope', '$timeout', '$location', '$cordov
             }, false);
 
 
-            deviceAuthService.getDeviceAuthService($scope.device, $scope.platforms).then(function(results) {
+            // deviceAuthService.getDeviceAuthService($scope.device, $scope.platforms).then(function(results) {
 
-                if (results.data) {
+            //     if (results.data) {
 
-                    $location.path('/views/home');
+            //         $location.path('/views/home');
 
-                } else {
+            //     } else {
 
-                    $location.path('/views/register');
+            //         $location.path('/views/register');
 
-                }
+            //     }
 
-            }, function(response) {
-                var errors = [];
-                if (response.data.ModelState) {
-                    for (var key in response.data.ModelState) {
-                        for (var i = 0; i < response.data.ModelState[key].length; i++) {
-                            errors.push(response.data.ModelState[key][i]);
-                        }
-                    }
-                } else {
-                    errors.push(response.data.Message);
-                }
-                var message = "Failed to register user due to:" + errors.join(' ');
-                alert(message);
-            });
+            // }, function(response) {
+            //     var errors = [];
+            //     if (response.data.ModelState) {
+            //         for (var key in response.data.ModelState) {
+            //             for (var i = 0; i < response.data.ModelState[key].length; i++) {
+            //                 errors.push(response.data.ModelState[key][i]);
+            //             }
+            //         }
+            //     } else {
+            //         errors.push(response.data.Message);
+            //     }
+            //     var message = "Failed to register user due to:" + errors.join(' ');
+            //     alert(message);
+            // });
 
         }
 

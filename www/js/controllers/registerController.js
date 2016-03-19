@@ -28,7 +28,7 @@ myApp.controller('registerController', ['$scope', '$location', '$timeout', 'auth
                         $scope.savedSuccessfully = true;
                         $scope.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
                         startTimer();
-                        
+
                     },
                     function(response) {
                         var errors = [];

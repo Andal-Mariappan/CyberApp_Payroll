@@ -21,6 +21,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"DatePicker\"><param name=\"ios-package\" value=\"DatePicker\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         },
@@ -30,6 +34,10 @@
                         },
                         {
                             "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
                             "count": 1
                         },
                         {
@@ -85,6 +93,18 @@
                             "count": 1
                         }
                     ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "CoreTelephony.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
                     "CoreGraphics.framework": [
                         {
                             "xml": false,
@@ -127,6 +147,9 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
+        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
@@ -134,6 +157,9 @@
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
         "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
+        },
+        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.ionicframework.cyberapppayroll831003"
         },
         "cordova-plugin-splashscreen": {
